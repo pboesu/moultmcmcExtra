@@ -14,8 +14,8 @@
 #' @param log_lik boolean retain pointwise log-likelihood in output? This enables model assessment and selection via the loo package. Defaults to true, can lead to very large output arrays if sample size is large.
 #' @param ... Arguments passed to `rstan::sampling` (e.g. iter, chains).
 #' @return An object of class `stanfit` returned by `rstan::sampling`
+#' @importFrom stats model.matrix sd
 #'
-#TODO: implement an input data class which ensures column names and correct encoding for categorical variables
 uz5_linpred_recap_annual_raneff <- function(moult_index_column, date_column, id_column, start_formula = ~1, duration_formula = ~1, sigma_formula = ~1, year_factor_column, beta_sd = 0, data, init = "auto", log_lik = TRUE,...) {
   stopifnot(all(data[[moult_index_column]] >= 0 & data[[moult_index_column]] <= 1))
   #TODO: Assess the relative amount of old vs moult data, and especially fail/warn when there is no data of either category
@@ -130,6 +130,7 @@ uz5_linpred_recap_annual_raneff <- function(moult_index_column, date_column, id_
 #' @importFrom stringr str_extract str_replace str_replace_all
 #' @importFrom cowplot plot_grid
 #' @importFrom rlang .data
+#' @importFrom moultmcmc summary_table
 #' @export
 compare_plot_annual_raneff <- function(...,names = NULL){
   #require(ggplot2)
@@ -140,7 +141,7 @@ compare_plot_annual_raneff <- function(...,names = NULL){
   if(is.null(names)) names = as.character(seq(1, length(parlist), by = 1))
   names(parlist) <- names
 
-  plotdata <- dplyr::bind_rows(lapply(parlist, function(x){summary_table(x)}), .id = 'model')
+  plotdata <- dplyr::bind_rows(lapply(parlist, function(x){moultmcmc::summary_table(x)}), .id = 'model')
   plotdata$not_converged <- ifelse(plotdata$Rhat > 1.05 & !is.na(plotdata$Rhat), TRUE, FALSE)#TODO: This falls over when there are only ML models in the mix
   dplyr::filter(plotdata, !grepl("lp__|log_sd_\\(Intercept\\)|\\blp\\b|log_lik[[0-9]+]|mu_ind[[0-9]+]|mu_ind_star|u_year|finite_sd|beta_star", .data$parameter)) %>%
     ggplot(aes(x = .data$model, y = .data$estimate, col = .data$model, ymin = .data$lci, ymax = .data$uci, shape = .data$not_converged)) + geom_pointrange(position = position_dodge(0.1)) + facet_wrap(~ .data$parameter, scales = 'free') -> fixefs_plot
