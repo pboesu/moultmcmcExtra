@@ -8,7 +8,7 @@ recaps_yr %>% group_by(year_fac, id) %>% summarize(n = n()) %>% ungroup() -> sum
 table(summs$year_fac, summs$n)
 
 test_that("uz5r_ranef works", {
-  uz5r_r = uz5_linpred_recap_annual_raneff("pfmg_sampled",
+  uz5r_r = moultmcmcExtra::uz5_linpred_recap_annual_raneff("pfmg_sampled",
                                            date_column = "date_sampled",
                                            id_column = "id",
                                            year_factor_column = 'year_fac',
@@ -21,4 +21,6 @@ test_that("uz5r_ranef works", {
   compare_plot_annual_raneff(
     uz5r_r
   )
+  predict(uz5r_r)
+  predict_ranef(uz5r_r)
 })
