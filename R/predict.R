@@ -41,8 +41,8 @@ predict_ranef <- function(object, newdata = NULL, predict.type = "parameters", s
            X_tau <- model.matrix(object$terms$duration_formula, df_pred)
            X_sigma <- model.matrix(object$terms$sigma_formula, df_pred)
 
-           Z_mu <- model.matrix(formula(paste('~',uz5r_r$terms$year_column,'- 1')), df_pred)
-           Z_tau <- model.matrix(formula(paste('~',uz5r_r$terms$year_column,'- 1')), df_pred)
+           Z_mu <- model.matrix(formula(paste('~',object$terms$year_column,'- 1')), df_pred)
+           Z_tau <- model.matrix(formula(paste('~',object$terms$year_column,'- 1')), df_pred)
 
            start_date <- X_mu %*% t(beta_mu) + Z_mu %*% t(u_mu)
            duration <- X_tau %*% t(beta_tau) + Z_tau %*% t(u_tau)

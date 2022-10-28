@@ -18,6 +18,7 @@ Imports:
     ggplot2,
     magrittr,
     MASS,
+    matrixStats,
     methods,
     moultmcmc,
     RColorBrewer,
