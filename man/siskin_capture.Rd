@@ -3,7 +3,7 @@
 \docType{data}
 \name{siskin_capture}
 \alias{siskin_capture}
-\title{Empirical moult dependend capture probabilities}
+\title{Empirical moult dependent capture probabilities}
 \format{
 A data frame with 1000 rows and 2 variables:
 \describe{

@@ -1,4 +1,4 @@
-#' Empirical moult dependend capture probabilities
+#' Empirical moult dependent capture probabilities
 #'
 #' A lookup dataset containing empirical capture probabilities for siskins
 #'

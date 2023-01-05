@@ -72,12 +72,12 @@ uz5_linpred_recap_annual_raneff <- function(moult_index_column, date_column, id_
                    N_years = length(unique(data[[year_factor_column]])))
   #include pointwise log_lik matrix  in output?
   if(log_lik){
-    outpars <- c('beta_mu_out','beta_tau','beta_sigma', 'sigma_intercept',
-'u_year_mean', 'u_year_duration', 'sd_year_mean', 'sd_year_duration',
+    outpars <- c('beta_mu_out','beta_tau_out','beta_tau','beta_sigma', 'sigma_intercept',
+'u_year_mean','u_year_mean_star', 'u_year_duration','u_year_duration_star', 'sd_year_mean', 'sd_year_duration',
 'sigma_mu_ind','beta_star','finite_sd', 'mu_ind_star', 'log_lik')
   } else {
-    outpars <- c('beta_mu_out','beta_tau','beta_sigma', 'sigma_intercept',
-'u_year_mean', 'u_year_duration', 'sd_year_mean', 'sd_year_duration',
+    outpars <- c('beta_mu_out', 'beta_tau_out','beta_tau','beta_sigma', 'sigma_intercept',
+                 'u_year_mean','u_year_mean_star', 'u_year_duration','u_year_duration_star', 'sd_year_mean', 'sd_year_duration',
 'sigma_mu_ind','beta_star','finite_sd', 'mu_ind_star')
   }
   #guess initial values
