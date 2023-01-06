@@ -18,7 +18,16 @@
 #' @importFrom stats density
 #' @importFrom rstan extract
 #' @export
-compairs_plot <- function(x, y = NULL, pars = NULL, scatter = TRUE, overlay = TRUE, names = NULL, ...){
+compairs_plot <- function(x, y = NULL, pars = NULL, scatter = TRUE,
+                          overlay = TRUE, names = NULL, col = NULL, ...){
+  if(is.null(col)){
+    col1 = 'red'
+    col2 = 'blue'
+  } else {
+    col1 = col[1]
+    col2 = col[2]
+  }
+
   if(is.null(pars)){pars = names(x$stanfit)[1:4]
   message("no pars specified, plotting first four parameters")}
 
@@ -60,7 +69,7 @@ compairs_plot <- function(x, y = NULL, pars = NULL, scatter = TRUE, overlay = TR
   # Draw histograms, tweak arguments of hist to make nicer figures
   for(i in seq_len(np)){
     if(is.null(y)){
-      if (!is.null(draws[[i]])) { plot(density(draws[[i]]),main="", col = 'blue')
+      if (!is.null(draws[[i]])) { plot(density(draws[[i]]),main="", col = col1)
       } else {
         plot.default(type = 'n', ...)
       }
@@ -68,11 +77,11 @@ compairs_plot <- function(x, y = NULL, pars = NULL, scatter = TRUE, overlay = TR
       dens = switch(is.null(draws[[i]])+1,density(draws[[i]]),NULL)
       dens.y = switch(is.null(draws.y[[i]])+1,density(draws.y[[i]]),NULL)
 
-      plot(dens ,main="", col = 'blue',
+      plot(dens ,main="", col = col1,
            xlim = range(dens$x,dens.y$x),
            ylim = range(dens$y,dens.y$y))
-      lines(dens.y,main="", col = 'red')
-      if(i == 1) legend('topleft', legend = names, text.col = c('blue','red'), bty = 'n')
+      lines(dens.y,main="", col = col2)
+      if(i == 1) legend('topleft', legend = names, text.col = c(col1,col2), bty = 'n')
     }
     title(main=pars[i], line = -0.1, xpd=TRUE)
   }
@@ -84,7 +93,7 @@ compairs_plot <- function(x, y = NULL, pars = NULL, scatter = TRUE, overlay = TR
       if (scatter == TRUE){
         if(!is.null(draws[[i]]) & !is.null(draws[[j]])){
 
-          plot.default(draws[[i]],draws[[j]], pch=16, cex=0.3, col='blue',
+          plot.default(draws[[i]],draws[[j]], pch=16, cex=0.3, col=col1,
                        xlim = range(draws[[i]],draws.y[[i]]),
                        ylim = range(draws[[j]],draws.y[[j]]),
                        ...)
@@ -92,7 +101,7 @@ compairs_plot <- function(x, y = NULL, pars = NULL, scatter = TRUE, overlay = TR
           plot.default(range(draws[[i]]), range(draws[[j]]), type = 'n', ...)
         }
         if(!is.null(draws.y[[i]]) & !is.null(draws.y[[j]])){
-          points(draws.y[[i]],draws.y[[j]], pch=16, cex=0.3, col='red', ...)}
+          points(draws.y[[i]],draws.y[[j]], pch=16, cex=0.3, col=col2, ...)}
       } else {
         plot.default(range(draws[[i]]), range(draws[[j]]), type = 'n', ...)
       }
@@ -104,8 +113,8 @@ compairs_plot <- function(x, y = NULL, pars = NULL, scatter = TRUE, overlay = TR
   ## some pretty colors
   #library(RColorBrewer)
   k <- 5
-  my.cols <- (RColorBrewer::brewer.pal(9, "Blues")[3:9])
-  my.cols.y <- (RColorBrewer::brewer.pal(9, "Reds")[3:9])
+  my.cols <- (colorRampPalette(c("white", col1))(9)[3:9])
+  my.cols.y <- (colorRampPalette(c("white", col2))(9)[3:9])
 
   ## compute 2D kernel density, see MASS book, pp. 130-131
 
