@@ -9,12 +9,14 @@
 #' @param y an optional second moultmcmc object
 #' @param pars 	An optional character vector of parameter names. If pars is not specified then the default is to use the first 4 parameters of x.
 #' @param names optional character vector of model names
+#' @param col optional vectors of colours (length 2)
 #' @param scatter logical, draw scatterplot of posterior samples if overlay = FALSE, else draw contours
 #' @param overlay logical, plot scatterplots and density contours of both models in each triangle, else draw one model per triangle
 #' @param ... further arguments to plot.default (the call that draws the scatter/contour plot)
 #' @importFrom MASS kde2d
 #' @import RColorBrewer
 #' @importFrom graphics abline contour hist layout lines par plot plot.default points text title strwidth legend
+#' @importFrom grDevices colorRampPalette
 #' @importFrom stats density
 #' @importFrom rstan extract
 #' @export
@@ -113,8 +115,8 @@ compairs_plot <- function(x, y = NULL, pars = NULL, scatter = TRUE,
   ## some pretty colors
   #library(RColorBrewer)
   k <- 5
-  my.cols <- (colorRampPalette(c("white", col1))(9)[3:9])
-  my.cols.y <- (colorRampPalette(c("white", col2))(9)[3:9])
+  my.cols <- (grDevices::colorRampPalette(c("white", col1))(9)[3:9])
+  my.cols.y <- (grDevices::colorRampPalette(c("white", col2))(9)[3:9])
 
   ## compute 2D kernel density, see MASS book, pp. 130-131
 

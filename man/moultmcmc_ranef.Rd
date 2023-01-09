@@ -38,6 +38,8 @@ moultmcmc_ranef(
 
 \item{sigma_formula}{model formula for start date sigma}
 
+\item{year_factor_column}{the name of a factor column in data that contains year_factor values}
+
 \item{type}{integer (one of 1,2,3,4,5,12) referring to type of moult data and consequently model to be fitted (see details)}
 
 \item{lump_non_moult}{logical; should pre- and post-moult observations be treated as indistinguishable? if TRUE and type \%in\% c(1,2,12), the relevant lumped model will be fitted (see details).}

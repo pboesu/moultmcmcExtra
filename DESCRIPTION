@@ -17,6 +17,7 @@ Imports:
     dplyr,
     fuzzyjoin,
     ggplot2,
+    grDevices,
     magrittr,
     MASS,
     matrixStats,

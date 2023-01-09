@@ -11,6 +11,7 @@ compairs_plot(
   scatter = TRUE,
   overlay = TRUE,
   names = NULL,
+  col = NULL,
   ...
 )
 }
@@ -26,6 +27,8 @@ compairs_plot(
 \item{overlay}{logical, plot scatterplots and density contours of both models in each triangle, else draw one model per triangle}
 
 \item{names}{optional character vector of model names}
+
+\item{col}{optional vectors of colours (length 2)}
 
 \item{...}{further arguments to plot.default (the call that draws the scatter/contour plot)}
 }

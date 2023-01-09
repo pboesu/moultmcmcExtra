@@ -39,7 +39,7 @@
 #'
 #' @return An object of class `stanfit` returned by `rstan::sampling`
 #' @importFrom nlme asOneFormula
-#' @importFrom stats lm model.frame as.formula
+#' @importFrom stats lm model.frame as.formula coef formula
 
 #TODO: implement an input data class which ensures column names and correct encoding for categorical variables
 moultmcmc_ranef <- function(moult_column,
