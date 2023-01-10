@@ -151,9 +151,9 @@ generated quantities{
 
   mu_ind_out = mu_ind_star + beta_star;
 
-  mu = X_mu * beta_mu;
+    mu = X_mu * beta_mu + u_year_mean[year_factor];
 //  print(mu);
-  tau = X_tau * beta_tau;
+  tau = X_tau * beta_tau + u_year_duration[year_factor];
 //  print(tau);
   sigma = exp(X_sigma * beta_sigma);//use log link for variance lin pred
 
