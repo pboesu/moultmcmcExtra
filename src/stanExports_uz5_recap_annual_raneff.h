@@ -85,110 +85,119 @@ static const std::vector<string> locations_array__ = {" (found before start of p
                                                       " (in 'string', line 50, column 2 to column 35)",
                                                       " (in 'string', line 51, column 2 to column 29)",
                                                       " (in 'string', line 54, column 2 to column 44)",
-                                                      " (in 'string', line 56, column 2 to column 69)",
-                                                      " (in 'string', line 57, column 2 to column 104)",
-                                                      " (in 'string', line 58, column 2 to column 35)",
-                                                      " (in 'string', line 137, column 2 to column 19)",
-                                                      " (in 'string', line 138, column 2 to column 18)",
-                                                      " (in 'string', line 139, column 2 to column 21)",
-                                                      " (in 'string', line 140, column 2 to column 20)",
-                                                      " (in 'string', line 141, column 2 to column 27)",
-                                                      " (in 'string', line 142, column 2 to column 28)",
-                                                      " (in 'string', line 143, column 2 to column 30)",
-                                                      " (in 'string', line 144, column 2 to column 32)",
-                                                      " (in 'string', line 145, column 2 to column 32)",
-                                                      " (in 'string', line 149, column 4 to column 31)",
-                                                      " (in 'string', line 148, column 9 to line 150, column 3)",
-                                                      " (in 'string', line 147, column 4 to column 61)",
-                                                      " (in 'string', line 146, column 20 to line 148, column 3)",
-                                                      " (in 'string', line 146, column 2 to line 150, column 3)",
-                                                      " (in 'string', line 151, column 2 to column 49)",
-                                                      " (in 'string', line 153, column 2 to column 56)",
-                                                      " (in 'string', line 155, column 2 to column 36)",
-                                                      " (in 'string', line 161, column 4 to column 52)",
-                                                      " (in 'string', line 162, column 4 to column 58)",
-                                                      " (in 'string', line 163, column 4 to column 41)",
-                                                      " (in 'string', line 160, column 8 to line 164, column 2)",
-                                                      " (in 'string', line 158, column 3 to column 81)",
-                                                      " (in 'string', line 159, column 3 to column 26)",
-                                                      " (in 'string', line 157, column 40 to line 160, column 2)",
-                                                      " (in 'string', line 157, column 1 to line 164, column 2)",
-                                                      " (in 'string', line 156, column 19 to line 165, column 1)",
-                                                      " (in 'string', line 156, column 0 to line 165, column 1)",
-                                                      " (in 'string', line 171, column 3 to column 83)",
-                                                      " (in 'string', line 172, column 3 to column 130)",
-                                                      " (in 'string', line 173, column 3 to column 40)",
-                                                      " (in 'string', line 170, column 9 to line 174, column 3)",
-                                                      " (in 'string', line 168, column 3 to column 136)",
-                                                      " (in 'string', line 169, column 3 to column 25)",
-                                                      " (in 'string', line 167, column 49 to line 170, column 3)",
-                                                      " (in 'string', line 167, column 2 to line 174, column 3)",
-                                                      " (in 'string', line 166, column 20 to line 175, column 1)",
-                                                      " (in 'string', line 166, column 0 to line 175, column 1)",
-                                                      " (in 'string', line 62, column 9 to column 14)",
-                                                      " (in 'string', line 62, column 2 to column 19)",
-                                                      " (in 'string', line 63, column 9 to column 14)",
-                                                      " (in 'string', line 63, column 2 to column 18)",
-                                                      " (in 'string', line 64, column 9 to column 16)",
-                                                      " (in 'string', line 64, column 2 to column 21)",
-                                                      " (in 'string', line 65, column 9 to column 16)",
-                                                      " (in 'string', line 65, column 2 to column 20)",
-                                                      " (in 'string', line 66, column 9 to column 22)",
-                                                      " (in 'string', line 66, column 2 to column 27)",
-                                                      " (in 'string', line 67, column 9 to column 22)",
-                                                      " (in 'string', line 67, column 2 to column 28)",
-                                                      " (in 'string', line 68, column 9 to column 22)",
-                                                      " (in 'string', line 68, column 2 to column 30)",
-                                                      " (in 'string', line 69, column 2 to column 49)",
-                                                      " (in 'string', line 71, column 2 to column 56)",
-                                                      " (in 'string', line 73, column 2 to column 36)",
-                                                      " (in 'string', line 78, column 4 to column 52)",
-                                                      " (in 'string', line 79, column 4 to column 58)",
-                                                      " (in 'string', line 77, column 8 to line 80, column 2)",
-                                                      " (in 'string', line 76, column 3 to column 81)",
-                                                      " (in 'string', line 75, column 40 to line 77, column 2)",
-                                                      " (in 'string', line 75, column 1 to line 80, column 2)",
-                                                      " (in 'string', line 74, column 19 to line 81, column 1)",
-                                                      " (in 'string', line 74, column 0 to line 81, column 1)",
-                                                      " (in 'string', line 86, column 3 to column 83)",
-                                                      " (in 'string', line 87, column 3 to column 130)",
-                                                      " (in 'string', line 85, column 9 to line 88, column 3)",
-                                                      " (in 'string', line 84, column 3 to column 136)",
-                                                      " (in 'string', line 83, column 49 to line 85, column 3)",
-                                                      " (in 'string', line 83, column 2 to line 88, column 3)",
-                                                      " (in 'string', line 82, column 20 to line 89, column 1)",
-                                                      " (in 'string', line 82, column 0 to line 89, column 1)",
-                                                      " (in 'string', line 90, column 0 to column 98)",
-                                                      " (in 'string', line 106, column 0 to column 107)",
-                                                      " (in 'string', line 108, column 0 to column 38)",
-                                                      " (in 'string', line 109, column 0 to column 46)",
-                                                      " (in 'string', line 111, column 31 to column 34)",
-                                                      " (in 'string', line 111, column 29 to column 30)",
-                                                      " (in 'string', line 111, column 0 to column 36)",
-                                                      " (in 'string', line 112, column 32 to column 35)",
-                                                      " (in 'string', line 112, column 30 to column 31)",
-                                                      " (in 'string', line 112, column 0 to column 37)",
-                                                      " (in 'string', line 113, column 0 to column 28)",
-                                                      " (in 'string', line 114, column 0 to column 27)",
-                                                      " (in 'string', line 118, column 5 to column 36)",
-                                                      " (in 'string', line 117, column 25 to line 119, column 4)",
-                                                      " (in 'string', line 117, column 3 to line 119, column 4)",
-                                                      " (in 'string', line 116, column 20 to line 120, column 3)",
-                                                      " (in 'string', line 116, column 2 to line 120, column 3)",
-                                                      " (in 'string', line 123, column 5 to column 37)",
-                                                      " (in 'string', line 122, column 26 to line 124, column 4)",
-                                                      " (in 'string', line 122, column 3 to line 124, column 4)",
-                                                      " (in 'string', line 121, column 21 to line 125, column 3)",
-                                                      " (in 'string', line 121, column 2 to line 125, column 3)",
-                                                      " (in 'string', line 128, column 5 to column 39)",
-                                                      " (in 'string', line 127, column 28 to line 129, column 4)",
-                                                      " (in 'string', line 127, column 3 to line 129, column 4)",
-                                                      " (in 'string', line 126, column 23 to line 130, column 3)",
-                                                      " (in 'string', line 126, column 2 to line 130, column 3)",
-                                                      " (in 'string', line 115, column 16 to line 131, column 1)",
-                                                      " (in 'string', line 115, column 0 to line 131, column 1)",
-                                                      " (in 'string', line 132, column 0 to column 27)",
-                                                      " (in 'string', line 133, column 0 to column 31)",
+                                                      " (in 'string', line 56, column 2 to column 89)",
+                                                      " (in 'string', line 57, column 2 to column 54)",
+                                                      " (in 'string', line 58, column 2 to column 104)",
+                                                      " (in 'string', line 59, column 2 to column 69)",
+                                                      " (in 'string', line 60, column 2 to column 81)",
+                                                      " (in 'string', line 61, column 2 to column 35)",
+                                                      " (in 'string', line 140, column 2 to column 19)",
+                                                      " (in 'string', line 141, column 2 to column 18)",
+                                                      " (in 'string', line 142, column 2 to column 21)",
+                                                      " (in 'string', line 143, column 2 to column 20)",
+                                                      " (in 'string', line 144, column 2 to column 27)",
+                                                      " (in 'string', line 145, column 2 to column 28)",
+                                                      " (in 'string', line 146, column 2 to column 30)",
+                                                      " (in 'string', line 147, column 2 to column 32)",
+                                                      " (in 'string', line 148, column 2 to column 32)",
+                                                      " (in 'string', line 149, column 2 to column 34)",
+                                                      " (in 'string', line 153, column 4 to column 31)",
+                                                      " (in 'string', line 152, column 9 to line 154, column 3)",
+                                                      " (in 'string', line 151, column 4 to column 61)",
+                                                      " (in 'string', line 150, column 20 to line 152, column 3)",
+                                                      " (in 'string', line 150, column 2 to line 154, column 3)",
+                                                      " (in 'string', line 158, column 4 to column 31)",
+                                                      " (in 'string', line 157, column 9 to line 159, column 3)",
+                                                      " (in 'string', line 156, column 4 to column 63)",
+                                                      " (in 'string', line 155, column 21 to line 157, column 3)",
+                                                      " (in 'string', line 155, column 2 to line 159, column 3)",
+                                                      " (in 'string', line 160, column 2 to column 49)",
+                                                      " (in 'string', line 162, column 2 to column 56)",
+                                                      " (in 'string', line 164, column 2 to column 36)",
+                                                      " (in 'string', line 170, column 4 to column 52)",
+                                                      " (in 'string', line 171, column 4 to column 58)",
+                                                      " (in 'string', line 172, column 4 to column 41)",
+                                                      " (in 'string', line 169, column 8 to line 173, column 2)",
+                                                      " (in 'string', line 167, column 3 to column 81)",
+                                                      " (in 'string', line 168, column 3 to column 26)",
+                                                      " (in 'string', line 166, column 40 to line 169, column 2)",
+                                                      " (in 'string', line 166, column 1 to line 173, column 2)",
+                                                      " (in 'string', line 165, column 19 to line 174, column 1)",
+                                                      " (in 'string', line 165, column 0 to line 174, column 1)",
+                                                      " (in 'string', line 180, column 3 to column 83)",
+                                                      " (in 'string', line 181, column 3 to column 130)",
+                                                      " (in 'string', line 182, column 3 to column 40)",
+                                                      " (in 'string', line 179, column 9 to line 183, column 3)",
+                                                      " (in 'string', line 177, column 3 to column 136)",
+                                                      " (in 'string', line 178, column 3 to column 25)",
+                                                      " (in 'string', line 176, column 49 to line 179, column 3)",
+                                                      " (in 'string', line 176, column 2 to line 183, column 3)",
+                                                      " (in 'string', line 175, column 20 to line 184, column 1)",
+                                                      " (in 'string', line 175, column 0 to line 184, column 1)",
+                                                      " (in 'string', line 65, column 9 to column 14)",
+                                                      " (in 'string', line 65, column 2 to column 19)",
+                                                      " (in 'string', line 66, column 9 to column 14)",
+                                                      " (in 'string', line 66, column 2 to column 18)",
+                                                      " (in 'string', line 67, column 9 to column 16)",
+                                                      " (in 'string', line 67, column 2 to column 21)",
+                                                      " (in 'string', line 68, column 9 to column 16)",
+                                                      " (in 'string', line 68, column 2 to column 20)",
+                                                      " (in 'string', line 69, column 9 to column 22)",
+                                                      " (in 'string', line 69, column 2 to column 27)",
+                                                      " (in 'string', line 70, column 9 to column 22)",
+                                                      " (in 'string', line 70, column 2 to column 28)",
+                                                      " (in 'string', line 71, column 9 to column 22)",
+                                                      " (in 'string', line 71, column 2 to column 30)",
+                                                      " (in 'string', line 72, column 2 to column 49)",
+                                                      " (in 'string', line 74, column 2 to column 56)",
+                                                      " (in 'string', line 76, column 2 to column 36)",
+                                                      " (in 'string', line 81, column 4 to column 52)",
+                                                      " (in 'string', line 82, column 4 to column 58)",
+                                                      " (in 'string', line 80, column 8 to line 83, column 2)",
+                                                      " (in 'string', line 79, column 3 to column 81)",
+                                                      " (in 'string', line 78, column 40 to line 80, column 2)",
+                                                      " (in 'string', line 78, column 1 to line 83, column 2)",
+                                                      " (in 'string', line 77, column 19 to line 84, column 1)",
+                                                      " (in 'string', line 77, column 0 to line 84, column 1)",
+                                                      " (in 'string', line 89, column 3 to column 83)",
+                                                      " (in 'string', line 90, column 3 to column 130)",
+                                                      " (in 'string', line 88, column 9 to line 91, column 3)",
+                                                      " (in 'string', line 87, column 3 to column 136)",
+                                                      " (in 'string', line 86, column 49 to line 88, column 3)",
+                                                      " (in 'string', line 86, column 2 to line 91, column 3)",
+                                                      " (in 'string', line 85, column 20 to line 92, column 1)",
+                                                      " (in 'string', line 85, column 0 to line 92, column 1)",
+                                                      " (in 'string', line 93, column 0 to column 98)",
+                                                      " (in 'string', line 109, column 0 to column 107)",
+                                                      " (in 'string', line 111, column 0 to column 38)",
+                                                      " (in 'string', line 112, column 0 to column 46)",
+                                                      " (in 'string', line 114, column 31 to column 34)",
+                                                      " (in 'string', line 114, column 29 to column 30)",
+                                                      " (in 'string', line 114, column 0 to column 36)",
+                                                      " (in 'string', line 115, column 32 to column 35)",
+                                                      " (in 'string', line 115, column 30 to column 31)",
+                                                      " (in 'string', line 115, column 0 to column 37)",
+                                                      " (in 'string', line 116, column 0 to column 28)",
+                                                      " (in 'string', line 117, column 0 to column 27)",
+                                                      " (in 'string', line 121, column 5 to column 36)",
+                                                      " (in 'string', line 120, column 25 to line 122, column 4)",
+                                                      " (in 'string', line 120, column 3 to line 122, column 4)",
+                                                      " (in 'string', line 119, column 20 to line 123, column 3)",
+                                                      " (in 'string', line 119, column 2 to line 123, column 3)",
+                                                      " (in 'string', line 126, column 5 to column 37)",
+                                                      " (in 'string', line 125, column 26 to line 127, column 4)",
+                                                      " (in 'string', line 125, column 3 to line 127, column 4)",
+                                                      " (in 'string', line 124, column 21 to line 128, column 3)",
+                                                      " (in 'string', line 124, column 2 to line 128, column 3)",
+                                                      " (in 'string', line 131, column 5 to column 39)",
+                                                      " (in 'string', line 130, column 28 to line 132, column 4)",
+                                                      " (in 'string', line 130, column 3 to line 132, column 4)",
+                                                      " (in 'string', line 129, column 23 to line 133, column 3)",
+                                                      " (in 'string', line 129, column 2 to line 133, column 3)",
+                                                      " (in 'string', line 118, column 16 to line 134, column 1)",
+                                                      " (in 'string', line 118, column 0 to line 134, column 1)",
+                                                      " (in 'string', line 135, column 0 to column 27)",
+                                                      " (in 'string', line 136, column 0 to column 31)",
                                                       " (in 'string', line 6, column 2 to column 21)",
                                                       " (in 'string', line 7, column 2 to column 25)",
                                                       " (in 'string', line 8, column 2 to column 21)",
@@ -240,16 +249,19 @@ static const std::vector<string> locations_array__ = {" (found before start of p
                                                       " (in 'string', line 46, column 9 to column 14)",
                                                       " (in 'string', line 47, column 9 to column 16)",
                                                       " (in 'string', line 48, column 9 to column 16)",
-                                                      " (in 'string', line 57, column 9 to column 18)",
-                                                      " (in 'string', line 137, column 9 to column 14)",
-                                                      " (in 'string', line 138, column 9 to column 14)",
-                                                      " (in 'string', line 139, column 9 to column 16)",
-                                                      " (in 'string', line 140, column 9 to column 16)",
-                                                      " (in 'string', line 141, column 9 to column 22)",
-                                                      " (in 'string', line 142, column 9 to column 22)",
-                                                      " (in 'string', line 143, column 9 to column 22)",
+                                                      " (in 'string', line 58, column 9 to column 18)",
+                                                      " (in 'string', line 59, column 9 to column 16)",
+                                                      " (in 'string', line 60, column 9 to column 16)",
+                                                      " (in 'string', line 140, column 9 to column 14)",
+                                                      " (in 'string', line 141, column 9 to column 14)",
+                                                      " (in 'string', line 142, column 9 to column 16)",
+                                                      " (in 'string', line 143, column 9 to column 16)",
                                                       " (in 'string', line 144, column 9 to column 22)",
-                                                      " (in 'string', line 145, column 9 to column 18)"};
+                                                      " (in 'string', line 145, column 9 to column 22)",
+                                                      " (in 'string', line 146, column 9 to column 22)",
+                                                      " (in 'string', line 147, column 9 to column 22)",
+                                                      " (in 'string', line 148, column 9 to column 18)",
+                                                      " (in 'string', line 149, column 9 to column 19)"};
 #include <stan_meta_header.hpp>
 class model_uz5_recap_annual_raneff final : public model_base_crtp<model_uz5_recap_annual_raneff> {
 private:
@@ -311,39 +323,39 @@ public:
       pos__ = std::numeric_limits<int>::min();
       
       pos__ = 1;
-      current_statement__ = 115;
+      current_statement__ = 124;
       context__.validate_dims("data initialization","N_ind","int",
           context__.to_vec());
       N_ind = std::numeric_limits<int>::min();
       
-      current_statement__ = 115;
+      current_statement__ = 124;
       N_ind = context__.vals_i("N_ind")[(1 - 1)];
-      current_statement__ = 115;
-      current_statement__ = 115;
+      current_statement__ = 124;
+      current_statement__ = 124;
       check_greater_or_equal(function__, "N_ind", N_ind, 0);
-      current_statement__ = 116;
+      current_statement__ = 125;
       context__.validate_dims("data initialization","N_ind_rep","int",
           context__.to_vec());
       N_ind_rep = std::numeric_limits<int>::min();
       
-      current_statement__ = 116;
+      current_statement__ = 125;
       N_ind_rep = context__.vals_i("N_ind_rep")[(1 - 1)];
-      current_statement__ = 116;
-      current_statement__ = 116;
+      current_statement__ = 125;
+      current_statement__ = 125;
       check_greater_or_equal(function__, "N_ind_rep", N_ind_rep, 0);
-      current_statement__ = 117;
+      current_statement__ = 126;
       context__.validate_dims("data initialization","N_old","int",
           context__.to_vec());
       N_old = std::numeric_limits<int>::min();
       
-      current_statement__ = 117;
+      current_statement__ = 126;
       N_old = context__.vals_i("N_old")[(1 - 1)];
-      current_statement__ = 117;
-      current_statement__ = 117;
+      current_statement__ = 126;
+      current_statement__ = 126;
       check_greater_or_equal(function__, "N_old", N_old, 0);
-      current_statement__ = 118;
+      current_statement__ = 127;
       validate_non_negative_index("old_dates", "N_old", N_old);
-      current_statement__ = 119;
+      current_statement__ = 128;
       context__.validate_dims("data initialization","old_dates","double",
           context__.to_vec(N_old));
       old_dates = Eigen::Matrix<double, -1, 1>(N_old);
@@ -351,68 +363,68 @@ public:
       
       {
         std::vector<local_scalar_t__> old_dates_flat__;
-        current_statement__ = 119;
+        current_statement__ = 128;
         assign(old_dates_flat__, nil_index_list(),
           context__.vals_r("old_dates"),
           "assigning variable old_dates_flat__");
-        current_statement__ = 119;
+        current_statement__ = 128;
         pos__ = 1;
-        current_statement__ = 119;
+        current_statement__ = 128;
         for (int sym1__ = 1; sym1__ <= N_old; ++sym1__) {
-          current_statement__ = 119;
+          current_statement__ = 128;
           assign(old_dates, cons_list(index_uni(sym1__), nil_index_list()),
             old_dates_flat__[(pos__ - 1)], "assigning variable old_dates");
-          current_statement__ = 119;
+          current_statement__ = 128;
           pos__ = (pos__ + 1);}
       }
-      current_statement__ = 120;
+      current_statement__ = 129;
       context__.validate_dims("data initialization","N_moult","int",
           context__.to_vec());
       N_moult = std::numeric_limits<int>::min();
       
-      current_statement__ = 120;
+      current_statement__ = 129;
       N_moult = context__.vals_i("N_moult")[(1 - 1)];
-      current_statement__ = 120;
-      current_statement__ = 120;
+      current_statement__ = 129;
+      current_statement__ = 129;
       check_greater_or_equal(function__, "N_moult", N_moult, 0);
-      current_statement__ = 121;
+      current_statement__ = 130;
       context__.validate_dims("data initialization","Nobs_replicated","int",
           context__.to_vec());
       Nobs_replicated = std::numeric_limits<int>::min();
       
-      current_statement__ = 121;
+      current_statement__ = 130;
       Nobs_replicated = context__.vals_i("Nobs_replicated")[(1 - 1)];
-      current_statement__ = 121;
-      current_statement__ = 121;
+      current_statement__ = 130;
+      current_statement__ = 130;
       check_greater_or_equal(function__, "Nobs_replicated", Nobs_replicated,
                              0);
-      current_statement__ = 122;
+      current_statement__ = 131;
       context__.validate_dims("data initialization",
           "Nobs_not_replicated_old","int",context__.to_vec());
       Nobs_not_replicated_old = std::numeric_limits<int>::min();
       
-      current_statement__ = 122;
+      current_statement__ = 131;
       Nobs_not_replicated_old = context__.vals_i("Nobs_not_replicated_old")[
           (1 - 1)];
-      current_statement__ = 122;
-      current_statement__ = 122;
+      current_statement__ = 131;
+      current_statement__ = 131;
       check_greater_or_equal(function__, "Nobs_not_replicated_old",
                              Nobs_not_replicated_old, 0);
-      current_statement__ = 123;
+      current_statement__ = 132;
       context__.validate_dims("data initialization",
           "Nobs_not_replicated_moult","int",context__.to_vec());
       Nobs_not_replicated_moult = std::numeric_limits<int>::min();
       
-      current_statement__ = 123;
+      current_statement__ = 132;
       Nobs_not_replicated_moult = context__.vals_i("Nobs_not_replicated_moult")[
           (1 - 1)];
-      current_statement__ = 123;
-      current_statement__ = 123;
+      current_statement__ = 132;
+      current_statement__ = 132;
       check_greater_or_equal(function__, "Nobs_not_replicated_moult",
                              Nobs_not_replicated_moult, 0);
-      current_statement__ = 124;
+      current_statement__ = 133;
       validate_non_negative_index("moult_dates", "N_moult", N_moult);
-      current_statement__ = 125;
+      current_statement__ = 134;
       context__.validate_dims("data initialization","moult_dates","double",
           context__.to_vec(N_moult));
       moult_dates = Eigen::Matrix<double, -1, 1>(N_moult);
@@ -420,23 +432,23 @@ public:
       
       {
         std::vector<local_scalar_t__> moult_dates_flat__;
-        current_statement__ = 125;
+        current_statement__ = 134;
         assign(moult_dates_flat__, nil_index_list(),
           context__.vals_r("moult_dates"),
           "assigning variable moult_dates_flat__");
-        current_statement__ = 125;
+        current_statement__ = 134;
         pos__ = 1;
-        current_statement__ = 125;
+        current_statement__ = 134;
         for (int sym1__ = 1; sym1__ <= N_moult; ++sym1__) {
-          current_statement__ = 125;
+          current_statement__ = 134;
           assign(moult_dates, cons_list(index_uni(sym1__), nil_index_list()),
             moult_dates_flat__[(pos__ - 1)], "assigning variable moult_dates");
-          current_statement__ = 125;
+          current_statement__ = 134;
           pos__ = (pos__ + 1);}
       }
-      current_statement__ = 126;
+      current_statement__ = 135;
       validate_non_negative_index("moult_indices", "N_moult", N_moult);
-      current_statement__ = 127;
+      current_statement__ = 136;
       context__.validate_dims("data initialization","moult_indices","double",
           context__.to_vec(N_moult));
       moult_indices = Eigen::Matrix<double, -1, 1>(N_moult);
@@ -444,190 +456,190 @@ public:
       
       {
         std::vector<local_scalar_t__> moult_indices_flat__;
-        current_statement__ = 127;
+        current_statement__ = 136;
         assign(moult_indices_flat__, nil_index_list(),
           context__.vals_r("moult_indices"),
           "assigning variable moult_indices_flat__");
-        current_statement__ = 127;
+        current_statement__ = 136;
         pos__ = 1;
-        current_statement__ = 127;
+        current_statement__ = 136;
         for (int sym1__ = 1; sym1__ <= N_moult; ++sym1__) {
-          current_statement__ = 127;
+          current_statement__ = 136;
           assign(moult_indices,
             cons_list(index_uni(sym1__), nil_index_list()),
             moult_indices_flat__[(pos__ - 1)],
             "assigning variable moult_indices");
-          current_statement__ = 127;
+          current_statement__ = 136;
           pos__ = (pos__ + 1);}
       }
-      current_statement__ = 127;
+      current_statement__ = 136;
       for (int sym1__ = 1; sym1__ <= N_moult; ++sym1__) {
-        current_statement__ = 127;
-        current_statement__ = 127;
+        current_statement__ = 136;
+        current_statement__ = 136;
         check_greater_or_equal(function__, "moult_indices[sym1__]",
                                moult_indices[(sym1__ - 1)], 0);}
-      current_statement__ = 127;
+      current_statement__ = 136;
       for (int sym1__ = 1; sym1__ <= N_moult; ++sym1__) {
-        current_statement__ = 127;
-        current_statement__ = 127;
+        current_statement__ = 136;
+        current_statement__ = 136;
         check_less_or_equal(function__, "moult_indices[sym1__]",
                             moult_indices[(sym1__ - 1)], 1);}
-      current_statement__ = 128;
+      current_statement__ = 137;
       validate_non_negative_index("individual", "N_moult + N_old",
                                   (N_moult + N_old));
-      current_statement__ = 129;
+      current_statement__ = 138;
       context__.validate_dims("data initialization","individual","int",
           context__.to_vec((N_moult + N_old)));
       individual = std::vector<int>((N_moult + N_old), std::numeric_limits<int>::min());
       
-      current_statement__ = 129;
+      current_statement__ = 138;
       assign(individual, nil_index_list(), context__.vals_i("individual"),
         "assigning variable individual");
-      current_statement__ = 129;
+      current_statement__ = 138;
       for (int sym1__ = 1; sym1__ <= (N_moult + N_old); ++sym1__) {
-        current_statement__ = 129;
-        current_statement__ = 129;
+        current_statement__ = 138;
+        current_statement__ = 138;
         check_greater_or_equal(function__, "individual[sym1__]",
                                individual[(sym1__ - 1)], 0);}
-      current_statement__ = 130;
+      current_statement__ = 139;
       validate_non_negative_index("individual_first_index", "N_ind", N_ind);
-      current_statement__ = 131;
+      current_statement__ = 140;
       context__.validate_dims("data initialization","individual_first_index",
           "int",context__.to_vec(N_ind));
       individual_first_index = std::vector<int>(N_ind, std::numeric_limits<int>::min());
       
-      current_statement__ = 131;
+      current_statement__ = 140;
       assign(individual_first_index, nil_index_list(),
         context__.vals_i("individual_first_index"),
         "assigning variable individual_first_index");
-      current_statement__ = 131;
+      current_statement__ = 140;
       for (int sym1__ = 1; sym1__ <= N_ind; ++sym1__) {
-        current_statement__ = 131;
-        current_statement__ = 131;
+        current_statement__ = 140;
+        current_statement__ = 140;
         check_greater_or_equal(function__, "individual_first_index[sym1__]",
                                individual_first_index[(sym1__ - 1)], 0);}
-      current_statement__ = 132;
+      current_statement__ = 141;
       validate_non_negative_index("replicated", "Nobs_replicated",
                                   Nobs_replicated);
-      current_statement__ = 133;
+      current_statement__ = 142;
       context__.validate_dims("data initialization","replicated","int",
           context__.to_vec(Nobs_replicated));
       replicated = std::vector<int>(Nobs_replicated, std::numeric_limits<int>::min());
       
-      current_statement__ = 133;
+      current_statement__ = 142;
       assign(replicated, nil_index_list(), context__.vals_i("replicated"),
         "assigning variable replicated");
-      current_statement__ = 133;
+      current_statement__ = 142;
       for (int sym1__ = 1; sym1__ <= Nobs_replicated; ++sym1__) {
-        current_statement__ = 133;
-        current_statement__ = 133;
+        current_statement__ = 142;
+        current_statement__ = 142;
         check_greater_or_equal(function__, "replicated[sym1__]",
                                replicated[(sym1__ - 1)], 0);}
-      current_statement__ = 134;
+      current_statement__ = 143;
       validate_non_negative_index("not_replicated",
                                   "(N_moult + N_old) - Nobs_replicated",
                                   ((N_moult + N_old) - Nobs_replicated));
-      current_statement__ = 135;
+      current_statement__ = 144;
       context__.validate_dims("data initialization","not_replicated","int",
           context__.to_vec(((N_moult + N_old) - Nobs_replicated)));
       not_replicated = std::vector<int>(((N_moult + N_old) - Nobs_replicated), std::numeric_limits<int>::min());
       
-      current_statement__ = 135;
+      current_statement__ = 144;
       assign(not_replicated, nil_index_list(),
         context__.vals_i("not_replicated"),
         "assigning variable not_replicated");
-      current_statement__ = 135;
+      current_statement__ = 144;
       for (int sym1__ = 1; sym1__ <= ((N_moult + N_old) - Nobs_replicated);
            ++sym1__) {
-        current_statement__ = 135;
-        current_statement__ = 135;
+        current_statement__ = 144;
+        current_statement__ = 144;
         check_greater_or_equal(function__, "not_replicated[sym1__]",
                                not_replicated[(sym1__ - 1)], 0);}
-      current_statement__ = 136;
+      current_statement__ = 145;
       validate_non_negative_index("not_replicated_old",
                                   "Nobs_not_replicated_old",
                                   Nobs_not_replicated_old);
-      current_statement__ = 137;
+      current_statement__ = 146;
       context__.validate_dims("data initialization","not_replicated_old",
           "int",context__.to_vec(Nobs_not_replicated_old));
       not_replicated_old = std::vector<int>(Nobs_not_replicated_old, std::numeric_limits<int>::min());
       
-      current_statement__ = 137;
+      current_statement__ = 146;
       assign(not_replicated_old, nil_index_list(),
         context__.vals_i("not_replicated_old"),
         "assigning variable not_replicated_old");
-      current_statement__ = 137;
+      current_statement__ = 146;
       for (int sym1__ = 1; sym1__ <= Nobs_not_replicated_old; ++sym1__) {
-        current_statement__ = 137;
-        current_statement__ = 137;
+        current_statement__ = 146;
+        current_statement__ = 146;
         check_greater_or_equal(function__, "not_replicated_old[sym1__]",
                                not_replicated_old[(sym1__ - 1)], 0);}
-      current_statement__ = 138;
+      current_statement__ = 147;
       validate_non_negative_index("not_replicated_moult",
                                   "Nobs_not_replicated_moult",
                                   Nobs_not_replicated_moult);
-      current_statement__ = 139;
+      current_statement__ = 148;
       context__.validate_dims("data initialization","not_replicated_moult",
           "int",context__.to_vec(Nobs_not_replicated_moult));
       not_replicated_moult = std::vector<int>(Nobs_not_replicated_moult, std::numeric_limits<int>::min());
       
-      current_statement__ = 139;
+      current_statement__ = 148;
       assign(not_replicated_moult, nil_index_list(),
         context__.vals_i("not_replicated_moult"),
         "assigning variable not_replicated_moult");
-      current_statement__ = 139;
+      current_statement__ = 148;
       for (int sym1__ = 1; sym1__ <= Nobs_not_replicated_moult; ++sym1__) {
-        current_statement__ = 139;
-        current_statement__ = 139;
+        current_statement__ = 148;
+        current_statement__ = 148;
         check_greater_or_equal(function__, "not_replicated_moult[sym1__]",
                                not_replicated_moult[(sym1__ - 1)], 0);}
-      current_statement__ = 140;
+      current_statement__ = 149;
       validate_non_negative_index("is_replicated", "N_ind", N_ind);
-      current_statement__ = 141;
+      current_statement__ = 150;
       context__.validate_dims("data initialization","is_replicated","int",
           context__.to_vec(N_ind));
       is_replicated = std::vector<int>(N_ind, std::numeric_limits<int>::min());
       
-      current_statement__ = 141;
+      current_statement__ = 150;
       assign(is_replicated, nil_index_list(),
         context__.vals_i("is_replicated"), "assigning variable is_replicated");
-      current_statement__ = 141;
+      current_statement__ = 150;
       for (int sym1__ = 1; sym1__ <= N_ind; ++sym1__) {
-        current_statement__ = 141;
-        current_statement__ = 141;
+        current_statement__ = 150;
+        current_statement__ = 150;
         check_greater_or_equal(function__, "is_replicated[sym1__]",
                                is_replicated[(sym1__ - 1)], 0);}
-      current_statement__ = 142;
+      current_statement__ = 151;
       validate_non_negative_index("replicated_individuals", "N_ind_rep",
                                   N_ind_rep);
-      current_statement__ = 143;
+      current_statement__ = 152;
       context__.validate_dims("data initialization","replicated_individuals",
           "int",context__.to_vec(N_ind_rep));
       replicated_individuals = std::vector<int>(N_ind_rep, std::numeric_limits<int>::min());
       
-      current_statement__ = 143;
+      current_statement__ = 152;
       assign(replicated_individuals, nil_index_list(),
         context__.vals_i("replicated_individuals"),
         "assigning variable replicated_individuals");
-      current_statement__ = 143;
+      current_statement__ = 152;
       for (int sym1__ = 1; sym1__ <= N_ind_rep; ++sym1__) {
-        current_statement__ = 143;
-        current_statement__ = 143;
+        current_statement__ = 152;
+        current_statement__ = 152;
         check_greater_or_equal(function__, "replicated_individuals[sym1__]",
                                replicated_individuals[(sym1__ - 1)], 0);}
-      current_statement__ = 144;
+      current_statement__ = 153;
       context__.validate_dims("data initialization","N_pred_mu","int",
           context__.to_vec());
       N_pred_mu = std::numeric_limits<int>::min();
       
-      current_statement__ = 144;
+      current_statement__ = 153;
       N_pred_mu = context__.vals_i("N_pred_mu")[(1 - 1)];
-      current_statement__ = 145;
+      current_statement__ = 154;
       validate_non_negative_index("X_mu", "N_old + N_moult",
                                   (N_old + N_moult));
-      current_statement__ = 146;
+      current_statement__ = 155;
       validate_non_negative_index("X_mu", "N_pred_mu", N_pred_mu);
-      current_statement__ = 147;
+      current_statement__ = 156;
       context__.validate_dims("data initialization","X_mu","double",
           context__.to_vec((N_old + N_moult), N_pred_mu));
       X_mu = Eigen::Matrix<double, -1, -1>((N_old + N_moult), N_pred_mu);
@@ -635,36 +647,36 @@ public:
       
       {
         std::vector<local_scalar_t__> X_mu_flat__;
-        current_statement__ = 147;
+        current_statement__ = 156;
         assign(X_mu_flat__, nil_index_list(), context__.vals_r("X_mu"),
           "assigning variable X_mu_flat__");
-        current_statement__ = 147;
+        current_statement__ = 156;
         pos__ = 1;
-        current_statement__ = 147;
+        current_statement__ = 156;
         for (int sym1__ = 1; sym1__ <= N_pred_mu; ++sym1__) {
-          current_statement__ = 147;
+          current_statement__ = 156;
           for (int sym2__ = 1; sym2__ <= (N_old + N_moult); ++sym2__) {
-            current_statement__ = 147;
+            current_statement__ = 156;
             assign(X_mu,
               cons_list(index_uni(sym2__),
                 cons_list(index_uni(sym1__), nil_index_list())),
               X_mu_flat__[(pos__ - 1)], "assigning variable X_mu");
-            current_statement__ = 147;
+            current_statement__ = 156;
             pos__ = (pos__ + 1);}}
       }
-      current_statement__ = 148;
+      current_statement__ = 157;
       context__.validate_dims("data initialization","N_pred_tau","int",
           context__.to_vec());
       N_pred_tau = std::numeric_limits<int>::min();
       
-      current_statement__ = 148;
+      current_statement__ = 157;
       N_pred_tau = context__.vals_i("N_pred_tau")[(1 - 1)];
-      current_statement__ = 149;
+      current_statement__ = 158;
       validate_non_negative_index("X_tau", "N_old + N_moult",
                                   (N_old + N_moult));
-      current_statement__ = 150;
+      current_statement__ = 159;
       validate_non_negative_index("X_tau", "N_pred_tau", N_pred_tau);
-      current_statement__ = 151;
+      current_statement__ = 160;
       context__.validate_dims("data initialization","X_tau","double",
           context__.to_vec((N_old + N_moult), N_pred_tau));
       X_tau = Eigen::Matrix<double, -1, -1>((N_old + N_moult), N_pred_tau);
@@ -672,36 +684,36 @@ public:
       
       {
         std::vector<local_scalar_t__> X_tau_flat__;
-        current_statement__ = 151;
+        current_statement__ = 160;
         assign(X_tau_flat__, nil_index_list(), context__.vals_r("X_tau"),
           "assigning variable X_tau_flat__");
-        current_statement__ = 151;
+        current_statement__ = 160;
         pos__ = 1;
-        current_statement__ = 151;
+        current_statement__ = 160;
         for (int sym1__ = 1; sym1__ <= N_pred_tau; ++sym1__) {
-          current_statement__ = 151;
+          current_statement__ = 160;
           for (int sym2__ = 1; sym2__ <= (N_old + N_moult); ++sym2__) {
-            current_statement__ = 151;
+            current_statement__ = 160;
             assign(X_tau,
               cons_list(index_uni(sym2__),
                 cons_list(index_uni(sym1__), nil_index_list())),
               X_tau_flat__[(pos__ - 1)], "assigning variable X_tau");
-            current_statement__ = 151;
+            current_statement__ = 160;
             pos__ = (pos__ + 1);}}
       }
-      current_statement__ = 152;
+      current_statement__ = 161;
       context__.validate_dims("data initialization","N_pred_sigma","int",
           context__.to_vec());
       N_pred_sigma = std::numeric_limits<int>::min();
       
-      current_statement__ = 152;
+      current_statement__ = 161;
       N_pred_sigma = context__.vals_i("N_pred_sigma")[(1 - 1)];
-      current_statement__ = 153;
+      current_statement__ = 162;
       validate_non_negative_index("X_sigma", "N_old + N_moult",
                                   (N_old + N_moult));
-      current_statement__ = 154;
+      current_statement__ = 163;
       validate_non_negative_index("X_sigma", "N_pred_sigma", N_pred_sigma);
-      current_statement__ = 155;
+      current_statement__ = 164;
       context__.validate_dims("data initialization","X_sigma","double",
           context__.to_vec((N_old + N_moult), N_pred_sigma));
       X_sigma = Eigen::Matrix<double, -1, -1>((N_old + N_moult), N_pred_sigma);
@@ -709,101 +721,107 @@ public:
       
       {
         std::vector<local_scalar_t__> X_sigma_flat__;
-        current_statement__ = 155;
+        current_statement__ = 164;
         assign(X_sigma_flat__, nil_index_list(), context__.vals_r("X_sigma"),
           "assigning variable X_sigma_flat__");
-        current_statement__ = 155;
+        current_statement__ = 164;
         pos__ = 1;
-        current_statement__ = 155;
+        current_statement__ = 164;
         for (int sym1__ = 1; sym1__ <= N_pred_sigma; ++sym1__) {
-          current_statement__ = 155;
+          current_statement__ = 164;
           for (int sym2__ = 1; sym2__ <= (N_old + N_moult); ++sym2__) {
-            current_statement__ = 155;
+            current_statement__ = 164;
             assign(X_sigma,
               cons_list(index_uni(sym2__),
                 cons_list(index_uni(sym1__), nil_index_list())),
               X_sigma_flat__[(pos__ - 1)], "assigning variable X_sigma");
-            current_statement__ = 155;
+            current_statement__ = 164;
             pos__ = (pos__ + 1);}}
       }
-      current_statement__ = 156;
+      current_statement__ = 165;
       context__.validate_dims("data initialization","beta_sd","double",
           context__.to_vec());
       beta_sd = std::numeric_limits<double>::quiet_NaN();
       
-      current_statement__ = 156;
+      current_statement__ = 165;
       beta_sd = context__.vals_r("beta_sd")[(1 - 1)];
-      current_statement__ = 157;
+      current_statement__ = 166;
       validate_non_negative_index("year_factor", "N_old + N_moult",
                                   (N_old + N_moult));
-      current_statement__ = 158;
+      current_statement__ = 167;
       context__.validate_dims("data initialization","year_factor","int",
           context__.to_vec((N_old + N_moult)));
       year_factor = std::vector<int>((N_old + N_moult), std::numeric_limits<int>::min());
       
-      current_statement__ = 158;
+      current_statement__ = 167;
       assign(year_factor, nil_index_list(), context__.vals_i("year_factor"),
         "assigning variable year_factor");
-      current_statement__ = 159;
+      current_statement__ = 168;
       context__.validate_dims("data initialization","N_years","int",
           context__.to_vec());
       N_years = std::numeric_limits<int>::min();
       
-      current_statement__ = 159;
-      N_years = context__.vals_i("N_years")[(1 - 1)];
-      current_statement__ = 160;
-      validate_non_negative_index("beta_mu", "N_pred_mu", N_pred_mu);
-      current_statement__ = 161;
-      validate_non_negative_index("beta_tau", "N_pred_tau", N_pred_tau);
-      current_statement__ = 162;
-      validate_non_negative_index("beta_sigma", "N_pred_sigma", N_pred_sigma);
-      current_statement__ = 163;
-      validate_non_negative_index("mu_ind", "N_ind", N_ind);
-      current_statement__ = 164;
-      validate_non_negative_index("u_year_mean", "N_years", N_years);
-      current_statement__ = 165;
-      validate_non_negative_index("u_year_duration", "N_years", N_years);
-      current_statement__ = 166;
-      validate_non_negative_index("mu_ind_star", "N_ind_rep", N_ind_rep);
-      current_statement__ = 167;
-      validate_non_negative_index("Rt", "N_old", N_old);
       current_statement__ = 168;
-      validate_non_negative_index("P", "N_old", N_old);
+      N_years = context__.vals_i("N_years")[(1 - 1)];
       current_statement__ = 169;
-      validate_non_negative_index("Ru", "N_moult", N_moult);
+      validate_non_negative_index("beta_mu", "N_pred_mu", N_pred_mu);
       current_statement__ = 170;
-      validate_non_negative_index("q", "N_moult", N_moult);
+      validate_non_negative_index("beta_tau", "N_pred_tau", N_pred_tau);
       current_statement__ = 171;
+      validate_non_negative_index("beta_sigma", "N_pred_sigma", N_pred_sigma);
+      current_statement__ = 172;
+      validate_non_negative_index("mu_ind", "N_ind", N_ind);
+      current_statement__ = 173;
+      validate_non_negative_index("u_year_mean", "N_years", N_years);
+      current_statement__ = 174;
+      validate_non_negative_index("u_year_duration", "N_years", N_years);
+      current_statement__ = 175;
+      validate_non_negative_index("mu_ind_star", "N_ind_rep", N_ind_rep);
+      current_statement__ = 176;
+      validate_non_negative_index("u_year_mean_star", "N_years", N_years);
+      current_statement__ = 177;
+      validate_non_negative_index("u_year_duration_star", "N_years", N_years);
+      current_statement__ = 178;
+      validate_non_negative_index("Rt", "N_old", N_old);
+      current_statement__ = 179;
+      validate_non_negative_index("P", "N_old", N_old);
+      current_statement__ = 180;
+      validate_non_negative_index("Ru", "N_moult", N_moult);
+      current_statement__ = 181;
+      validate_non_negative_index("q", "N_moult", N_moult);
+      current_statement__ = 182;
       mu_1dim__ = std::numeric_limits<int>::min();
       
-      current_statement__ = 171;
+      current_statement__ = 182;
       mu_1dim__ = (N_old + N_moult);
-      current_statement__ = 171;
+      current_statement__ = 182;
       validate_non_negative_index("mu", "N_old + N_moult", mu_1dim__);
-      current_statement__ = 172;
+      current_statement__ = 183;
       tau_1dim__ = std::numeric_limits<int>::min();
       
-      current_statement__ = 172;
+      current_statement__ = 183;
       tau_1dim__ = (N_old + N_moult);
-      current_statement__ = 172;
+      current_statement__ = 183;
       validate_non_negative_index("tau", "N_old + N_moult", tau_1dim__);
-      current_statement__ = 173;
+      current_statement__ = 184;
       sigma_1dim__ = std::numeric_limits<int>::min();
       
-      current_statement__ = 173;
+      current_statement__ = 184;
       sigma_1dim__ = (N_old + N_moult);
-      current_statement__ = 173;
+      current_statement__ = 184;
       validate_non_negative_index("sigma", "N_old + N_moult", sigma_1dim__);
-      current_statement__ = 174;
+      current_statement__ = 185;
       log_lik_1dim__ = std::numeric_limits<int>::min();
       
-      current_statement__ = 174;
+      current_statement__ = 185;
       log_lik_1dim__ = (N_old + N_moult);
-      current_statement__ = 174;
+      current_statement__ = 185;
       validate_non_negative_index("log_lik", "N_old + N_moult",
                                   log_lik_1dim__);
-      current_statement__ = 175;
+      current_statement__ = 186;
       validate_non_negative_index("beta_mu_out", "N_pred_mu", N_pred_mu);
+      current_statement__ = 187;
+      validate_non_negative_index("beta_tau_out", "N_pred_tau", N_pred_tau);
     } catch (const std::exception& e) {
       stan::lang::rethrow_located(e, locations_array__[current_statement__]);
       // Next line prevents compiler griping about no return
@@ -926,16 +944,22 @@ public:
       beta_star = DUMMY_VAR__;
       
       current_statement__ = 11;
-      beta_star = (beta_mu[(1 - 1)] +
-                    mean(
-                      rvalue(mu_ind,
-                        cons_list(index_multi(replicated_individuals),
-                          nil_index_list()), "mu_ind")));
+      beta_star = ((beta_mu[(1 - 1)] +
+                     mean(
+                       rvalue(mu_ind,
+                         cons_list(index_multi(replicated_individuals),
+                           nil_index_list()), "mu_ind"))) +
+                    mean(u_year_mean));
+      local_scalar_t__ tau_star;
+      tau_star = DUMMY_VAR__;
+      
+      current_statement__ = 12;
+      tau_star = (beta_tau[(1 - 1)] + mean(u_year_duration));
       Eigen::Matrix<local_scalar_t__, -1, 1> mu_ind_star;
       mu_ind_star = Eigen::Matrix<local_scalar_t__, -1, 1>(N_ind_rep);
       stan::math::fill(mu_ind_star, DUMMY_VAR__);
       
-      current_statement__ = 12;
+      current_statement__ = 13;
       assign(mu_ind_star, nil_index_list(),
         subtract(
           rvalue(mu_ind,
@@ -946,78 +970,94 @@ public:
               cons_list(index_multi(replicated_individuals),
                 nil_index_list()), "mu_ind"))),
         "assigning variable mu_ind_star");
+      Eigen::Matrix<local_scalar_t__, -1, 1> u_year_mean_star;
+      u_year_mean_star = Eigen::Matrix<local_scalar_t__, -1, 1>(N_years);
+      stan::math::fill(u_year_mean_star, DUMMY_VAR__);
+      
+      current_statement__ = 14;
+      assign(u_year_mean_star, nil_index_list(),
+        subtract(u_year_mean, mean(u_year_mean)),
+        "assigning variable u_year_mean_star");
+      Eigen::Matrix<local_scalar_t__, -1, 1> u_year_duration_star;
+      u_year_duration_star = Eigen::Matrix<local_scalar_t__, -1, 1>(N_years);
+      stan::math::fill(u_year_duration_star, DUMMY_VAR__);
+      
+      current_statement__ = 15;
+      assign(u_year_duration_star, nil_index_list(),
+        subtract(u_year_duration, mean(u_year_duration)),
+        "assigning variable u_year_duration_star");
       local_scalar_t__ finite_sd;
       finite_sd = DUMMY_VAR__;
       
-      current_statement__ = 13;
+      current_statement__ = 16;
       finite_sd = sd(mu_ind_star);
       {
-        current_statement__ = 51;
+        current_statement__ = 60;
         validate_non_negative_index("Rt", "N_old", N_old);
         Eigen::Matrix<local_scalar_t__, -1, 1> Rt;
         Rt = Eigen::Matrix<local_scalar_t__, -1, 1>(N_old);
         stan::math::fill(Rt, DUMMY_VAR__);
         
-        current_statement__ = 53;
+        current_statement__ = 62;
         validate_non_negative_index("P", "N_old", N_old);
         Eigen::Matrix<local_scalar_t__, -1, 1> P;
         P = Eigen::Matrix<local_scalar_t__, -1, 1>(N_old);
         stan::math::fill(P, DUMMY_VAR__);
         
-        current_statement__ = 55;
+        current_statement__ = 64;
         validate_non_negative_index("Ru", "N_moult", N_moult);
         Eigen::Matrix<local_scalar_t__, -1, 1> Ru;
         Ru = Eigen::Matrix<local_scalar_t__, -1, 1>(N_moult);
         stan::math::fill(Ru, DUMMY_VAR__);
         
-        current_statement__ = 57;
+        current_statement__ = 66;
         validate_non_negative_index("q", "N_moult", N_moult);
         Eigen::Matrix<local_scalar_t__, -1, 1> q;
         q = Eigen::Matrix<local_scalar_t__, -1, 1>(N_moult);
         stan::math::fill(q, DUMMY_VAR__);
         
-        current_statement__ = 59;
+        current_statement__ = 68;
         validate_non_negative_index("mu", "N_old + N_moult",
                                     (N_old + N_moult));
         Eigen::Matrix<local_scalar_t__, -1, 1> mu;
         mu = Eigen::Matrix<local_scalar_t__, -1, 1>((N_old + N_moult));
         stan::math::fill(mu, DUMMY_VAR__);
         
-        current_statement__ = 61;
+        current_statement__ = 70;
         validate_non_negative_index("tau", "N_old + N_moult",
                                     (N_old + N_moult));
         Eigen::Matrix<local_scalar_t__, -1, 1> tau;
         tau = Eigen::Matrix<local_scalar_t__, -1, 1>((N_old + N_moult));
         stan::math::fill(tau, DUMMY_VAR__);
         
-        current_statement__ = 63;
+        current_statement__ = 72;
         validate_non_negative_index("sigma", "N_old + N_moult",
                                     (N_old + N_moult));
         Eigen::Matrix<local_scalar_t__, -1, 1> sigma;
         sigma = Eigen::Matrix<local_scalar_t__, -1, 1>((N_old + N_moult));
         stan::math::fill(sigma, DUMMY_VAR__);
         
-        current_statement__ = 65;
+        current_statement__ = 74;
         assign(mu, nil_index_list(),
           add(multiply(X_mu, beta_mu),
             rvalue(u_year_mean,
               cons_list(index_multi(year_factor), nil_index_list()),
               "u_year_mean")), "assigning variable mu");
-        current_statement__ = 66;
+        current_statement__ = 75;
         assign(tau, nil_index_list(),
           add(multiply(X_tau, beta_tau),
             rvalue(u_year_duration,
               cons_list(index_multi(year_factor), nil_index_list()),
               "u_year_duration")), "assigning variable tau");
-        current_statement__ = 67;
+        current_statement__ = 76;
         assign(sigma, nil_index_list(),
           stan::math::exp(multiply(X_sigma, beta_sigma)),
           "assigning variable sigma");
-        current_statement__ = 75;
+        current_statement__ = 84;
         for (int i = 1; i <= N_old; ++i) {
-          current_statement__ = 73;
+          current_statement__ = 82;
           if (logical_eq(is_replicated[(individual[(i - 1)] - 1)], 1)) {
-            current_statement__ = 71;
+            current_statement__ = 80;
             assign(P, cons_list(index_uni(i), nil_index_list()),
               (1 -
                 Phi(
@@ -1025,23 +1065,23 @@ public:
                      (mu[(i - 1)] + mu_ind[(individual[(i - 1)] - 1)])) /
                     sigma_mu_ind))), "assigning variable P");
           } else {
-            current_statement__ = 68;
+            current_statement__ = 77;
             assign(P, cons_list(index_uni(i), nil_index_list()),
               (1 -
                 Phi(((old_dates[(i - 1)] - mu[(i - 1)]) / sigma[(i - 1)]))),
               "assigning variable P");
-            current_statement__ = 69;
+            current_statement__ = 78;
             assign(Rt, cons_list(index_uni(i), nil_index_list()),
               Phi(
                 (((old_dates[(i - 1)] - tau[(i - 1)]) - mu[(i - 1)]) /
                   sigma[(i - 1)])), "assigning variable Rt");
           }}
-        current_statement__ = 83;
+        current_statement__ = 92;
         for (int i = 1; i <= N_moult; ++i) {
-          current_statement__ = 81;
+          current_statement__ = 90;
           if (logical_eq(is_replicated[(individual[((i + N_old) - 1)] - 1)],
                 1)) {
-            current_statement__ = 79;
+            current_statement__ = 88;
             assign(q, cons_list(index_uni(i), nil_index_list()),
               normal_lpdf<false>(
                 (moult_dates[(i - 1)] -
@@ -1050,13 +1090,13 @@ public:
                   mu_ind[(individual[((i + N_old) - 1)] - 1)]), sigma_mu_ind),
               "assigning variable q");
           } else {
-            current_statement__ = 76;
+            current_statement__ = 85;
             assign(Ru, cons_list(index_uni(i), nil_index_list()),
               Phi(
                 (((moult_dates[(i - 1)] - tau[((i + N_old) - 1)]) -
                    mu[((i + N_old) - 1)]) / sigma[((i + N_old) - 1)])),
               "assigning variable Ru");
-            current_statement__ = 77;
+            current_statement__ = 86;
             assign(q, cons_list(index_uni(i), nil_index_list()),
               (stan::math::log(tau[((i + N_old) - 1)]) +
                 normal_lpdf<false>(
@@ -1065,7 +1105,7 @@ public:
                   mu[((i + N_old) - 1)], sigma[((i + N_old) - 1)])),
               "assigning variable q");
           }}
-        current_statement__ = 84;
+        current_statement__ = 93;
         lp_accum__.add(
           normal_lpdf<propto__>(
             rvalue(mu_ind,
@@ -1076,7 +1116,7 @@ public:
   cons_list(index_multi(individual_first_index), nil_index_list()), "sigma"),
               cons_list(index_multi(replicated_individuals),
                 nil_index_list()), "sigma[individual_first_index]")));
-        current_statement__ = 85;
+        current_statement__ = 94;
         lp_accum__.add(
           (((sum(stan::math::log(P)) -
               sum(
@@ -1089,81 +1129,81 @@ public:
                 rvalue(Ru,
                   cons_list(index_multi(not_replicated_moult),
                     nil_index_list()), "Ru")))));
-        current_statement__ = 86;
+        current_statement__ = 95;
         lp_accum__.add(normal_lpdf<propto__>(u_year_mean, 0, sd_year_mean));
-        current_statement__ = 87;
+        current_statement__ = 96;
         lp_accum__.add(
           normal_lpdf<propto__>(u_year_duration, 0, sd_year_duration));
-        current_statement__ = 89;
+        current_statement__ = 98;
         if (logical_lt(beta_mu[(1 - 1)], 0)) {
-          current_statement__ = 89;
+          current_statement__ = 98;
           lp_accum__.add(stan::math::negative_infinity());
         } else {
-          current_statement__ = 88;
+          current_statement__ = 97;
           if (logical_gt(beta_mu[(1 - 1)], 366)) {
-            current_statement__ = 88;
+            current_statement__ = 97;
             lp_accum__.add(stan::math::negative_infinity());
           } else {
-            current_statement__ = 88;
+            current_statement__ = 97;
             lp_accum__.add(
               -log_diff_exp(normal_cdf_log(366, 150, 50),
                  normal_cdf_log(0, 150, 50)));
           }
         }
-        current_statement__ = 90;
+        current_statement__ = 99;
         lp_accum__.add(normal_lpdf<propto__>(beta_mu[(1 - 1)], 150, 50));
-        current_statement__ = 92;
+        current_statement__ = 101;
         if (logical_lt(beta_tau[(1 - 1)], 0)) {
-          current_statement__ = 92;
+          current_statement__ = 101;
           lp_accum__.add(stan::math::negative_infinity());
         } else {
-          current_statement__ = 91;
+          current_statement__ = 100;
           if (logical_gt(beta_tau[(1 - 1)], 366)) {
-            current_statement__ = 91;
+            current_statement__ = 100;
             lp_accum__.add(stan::math::negative_infinity());
           } else {
-            current_statement__ = 91;
+            current_statement__ = 100;
             lp_accum__.add(
               -log_diff_exp(normal_cdf_log(366, 100, 30),
                  normal_cdf_log(0, 100, 30)));
           }
         }
-        current_statement__ = 93;
+        current_statement__ = 102;
         lp_accum__.add(normal_lpdf<propto__>(beta_tau[(1 - 1)], 100, 30));
-        current_statement__ = 94;
+        current_statement__ = 103;
         lp_accum__.add(normal_lpdf<propto__>(beta_sigma[(1 - 1)], 0, 5));
-        current_statement__ = 95;
+        current_statement__ = 104;
         lp_accum__.add(normal_lpdf<propto__>(sigma_mu_ind, 0, 1));
-        current_statement__ = 112;
+        current_statement__ = 121;
         if (logical_gt(beta_sd, 0)) {
-          current_statement__ = 100;
+          current_statement__ = 109;
           if (logical_gt(N_pred_mu, 1)) {
-            current_statement__ = 98;
+            current_statement__ = 107;
             for (int i = 2; i <= N_pred_mu; ++i) {
-              current_statement__ = 96;
+              current_statement__ = 105;
               lp_accum__.add(
                 normal_lpdf<propto__>(beta_mu[(i - 1)], 0, beta_sd));}
           } 
-          current_statement__ = 105;
+          current_statement__ = 114;
           if (logical_gt(N_pred_tau, 1)) {
-            current_statement__ = 103;
+            current_statement__ = 112;
             for (int i = 2; i <= N_pred_tau; ++i) {
-              current_statement__ = 101;
+              current_statement__ = 110;
               lp_accum__.add(
                 normal_lpdf<propto__>(beta_tau[(i - 1)], 0, beta_sd));}
           } 
-          current_statement__ = 110;
+          current_statement__ = 119;
           if (logical_gt(N_pred_sigma, 1)) {
-            current_statement__ = 108;
+            current_statement__ = 117;
             for (int i = 2; i <= N_pred_sigma; ++i) {
-              current_statement__ = 106;
+              current_statement__ = 115;
               lp_accum__.add(
                 normal_lpdf<propto__>(beta_sigma[(i - 1)], 0, beta_sd));}
           } 
         } 
-        current_statement__ = 113;
+        current_statement__ = 122;
         lp_accum__.add(normal_lpdf<propto__>(sd_year_mean, 0, 2));
-        current_statement__ = 114;
+        current_statement__ = 123;
         lp_accum__.add(normal_lpdf<propto__>(sd_year_duration, 0, 2));
       }
     } catch (const std::exception& e) {
@@ -1257,9 +1297,20 @@ public:
       double beta_star;
       beta_star = std::numeric_limits<double>::quiet_NaN();
       
+      double tau_star;
+      tau_star = std::numeric_limits<double>::quiet_NaN();
+      
       Eigen::Matrix<double, -1, 1> mu_ind_star;
       mu_ind_star = Eigen::Matrix<double, -1, 1>(N_ind_rep);
       stan::math::fill(mu_ind_star, std::numeric_limits<double>::quiet_NaN());
+      
+      Eigen::Matrix<double, -1, 1> u_year_mean_star;
+      u_year_mean_star = Eigen::Matrix<double, -1, 1>(N_years);
+      stan::math::fill(u_year_mean_star, std::numeric_limits<double>::quiet_NaN());
+      
+      Eigen::Matrix<double, -1, 1> u_year_duration_star;
+      u_year_duration_star = Eigen::Matrix<double, -1, 1>(N_years);
+      stan::math::fill(u_year_duration_star, std::numeric_limits<double>::quiet_NaN());
       
       double finite_sd;
       finite_sd = std::numeric_limits<double>::quiet_NaN();
@@ -1286,12 +1337,15 @@ public:
       current_statement__ = 10;
       sigma_intercept = stan::math::exp(beta_sigma[(1 - 1)]);
       current_statement__ = 11;
-      beta_star = (beta_mu[(1 - 1)] +
-                    mean(
-                      rvalue(mu_ind,
-                        cons_list(index_multi(replicated_individuals),
-                          nil_index_list()), "mu_ind")));
+      beta_star = ((beta_mu[(1 - 1)] +
+                     mean(
+                       rvalue(mu_ind,
+                         cons_list(index_multi(replicated_individuals),
+                           nil_index_list()), "mu_ind"))) +
+                    mean(u_year_mean));
       current_statement__ = 12;
+      tau_star = (beta_tau[(1 - 1)] + mean(u_year_duration));
+      current_statement__ = 13;
       assign(mu_ind_star, nil_index_list(),
         subtract(
           rvalue(mu_ind,
@@ -1302,13 +1356,26 @@ public:
               cons_list(index_multi(replicated_individuals),
                 nil_index_list()), "mu_ind"))),
         "assigning variable mu_ind_star");
-      current_statement__ = 13;
+      current_statement__ = 14;
+      assign(u_year_mean_star, nil_index_list(),
+        subtract(u_year_mean, mean(u_year_mean)),
+        "assigning variable u_year_mean_star");
+      current_statement__ = 15;
+      assign(u_year_duration_star, nil_index_list(),
+        subtract(u_year_duration, mean(u_year_duration)),
+        "assigning variable u_year_duration_star");
+      current_statement__ = 16;
       finite_sd = sd(mu_ind_star);
       if (emit_transformed_parameters__) {
         vars__.emplace_back(sigma_intercept);
         vars__.emplace_back(beta_star);
+        vars__.emplace_back(tau_star);
         for (int sym1__ = 1; sym1__ <= N_ind_rep; ++sym1__) {
           vars__.emplace_back(mu_ind_star[(sym1__ - 1)]);}
+        for (int sym1__ = 1; sym1__ <= N_years; ++sym1__) {
+          vars__.emplace_back(u_year_mean_star[(sym1__ - 1)]);}
+        for (int sym1__ = 1; sym1__ <= N_years; ++sym1__) {
+          vars__.emplace_back(u_year_duration_star[(sym1__ - 1)]);}
         vars__.emplace_back(finite_sd);
       } 
       if (logical_negation(emit_generated_quantities__)) {
@@ -1350,69 +1417,86 @@ public:
       beta_mu_out = Eigen::Matrix<double, -1, 1>(N_pred_mu);
       stan::math::fill(beta_mu_out, std::numeric_limits<double>::quiet_NaN());
       
-      current_statement__ = 27;
+      Eigen::Matrix<double, -1, 1> beta_tau_out;
+      beta_tau_out = Eigen::Matrix<double, -1, 1>(N_pred_tau);
+      stan::math::fill(beta_tau_out, std::numeric_limits<double>::quiet_NaN());
+      
+      current_statement__ = 31;
       if (logical_gt(N_pred_mu, 1)) {
-        current_statement__ = 25;
+        current_statement__ = 29;
         assign(beta_mu_out, nil_index_list(),
           append_row(beta_star,
             rvalue(beta_mu,
               cons_list(index_min_max(2, N_pred_mu), nil_index_list()),
               "beta_mu")), "assigning variable beta_mu_out");
       } else {
-        current_statement__ = 23;
+        current_statement__ = 27;
         assign(beta_mu_out, cons_list(index_uni(1), nil_index_list()),
           beta_star, "assigning variable beta_mu_out");
       }
-      current_statement__ = 28;
+      current_statement__ = 36;
+      if (logical_gt(N_pred_tau, 1)) {
+        current_statement__ = 34;
+        assign(beta_tau_out, nil_index_list(),
+          append_row(tau_star,
+            rvalue(beta_tau,
+              cons_list(index_min_max(2, N_pred_tau), nil_index_list()),
+              "beta_tau")), "assigning variable beta_tau_out");
+      } else {
+        current_statement__ = 32;
+        assign(beta_tau_out, cons_list(index_uni(1), nil_index_list()),
+          tau_star, "assigning variable beta_tau_out");
+      }
+      current_statement__ = 37;
       assign(mu, nil_index_list(),
         add(multiply(X_mu, beta_mu),
           rvalue(u_year_mean,
             cons_list(index_multi(year_factor), nil_index_list()),
             "u_year_mean")), "assigning variable mu");
-      current_statement__ = 29;
+      current_statement__ = 38;
       assign(tau, nil_index_list(),
         add(multiply(X_tau, beta_tau),
           rvalue(u_year_duration,
             cons_list(index_multi(year_factor), nil_index_list()),
             "u_year_duration")), "assigning variable tau");
-      current_statement__ = 30;
+      current_statement__ = 39;
       assign(sigma, nil_index_list(),
         stan::math::exp(multiply(X_sigma, beta_sigma)),
         "assigning variable sigma");
-      current_statement__ = 40;
+      current_statement__ = 49;
       for (int i = 1; i <= N_old; ++i) {
-        current_statement__ = 38;
+        current_statement__ = 47;
         if (logical_eq(is_replicated[(individual[(i - 1)] - 1)], 1)) {
-          current_statement__ = 35;
+          current_statement__ = 44;
           assign(P, cons_list(index_uni(i), nil_index_list()),
             (1 -
               Phi(
                 ((old_dates[(i - 1)] -
                    (mu[(i - 1)] + mu_ind[(individual[(i - 1)] - 1)])) /
                   sigma_mu_ind))), "assigning variable P");
-          current_statement__ = 36;
+          current_statement__ = 45;
           assign(log_lik, cons_list(index_uni(i), nil_index_list()),
             stan::math::log(P[(i - 1)]), "assigning variable log_lik");
         } else {
-          current_statement__ = 31;
+          current_statement__ = 40;
           assign(P, cons_list(index_uni(i), nil_index_list()),
             (1 - Phi(((old_dates[(i - 1)] - mu[(i - 1)]) / sigma[(i - 1)]))),
             "assigning variable P");
-          current_statement__ = 32;
+          current_statement__ = 41;
           assign(Rt, cons_list(index_uni(i), nil_index_list()),
             Phi(
               (((old_dates[(i - 1)] - tau[(i - 1)]) - mu[(i - 1)]) /
                 sigma[(i - 1)])), "assigning variable Rt");
-          current_statement__ = 33;
+          current_statement__ = 42;
           assign(log_lik, cons_list(index_uni(i), nil_index_list()),
             (stan::math::log(P[(i - 1)]) - log1m(Rt[(i - 1)])),
             "assigning variable log_lik");
         }}
-      current_statement__ = 50;
+      current_statement__ = 59;
       for (int i = 1; i <= N_moult; ++i) {
-        current_statement__ = 48;
+        current_statement__ = 57;
         if (logical_eq(is_replicated[(individual[((i + N_old) - 1)] - 1)], 1)) {
-          current_statement__ = 45;
+          current_statement__ = 54;
           assign(q, cons_list(index_uni(i), nil_index_list()),
             normal_lpdf<false>(
               (moult_dates[(i - 1)] -
@@ -1420,18 +1504,18 @@ public:
               (mu[((i + N_old) - 1)] +
                 mu_ind[(individual[((i + N_old) - 1)] - 1)]), sigma_mu_ind),
             "assigning variable q");
-          current_statement__ = 46;
+          current_statement__ = 55;
           assign(log_lik,
             cons_list(index_uni((N_old + i)), nil_index_list()), q[(i - 1)],
             "assigning variable log_lik");
         } else {
-          current_statement__ = 41;
+          current_statement__ = 50;
           assign(Ru, cons_list(index_uni(i), nil_index_list()),
             Phi(
               (((moult_dates[(i - 1)] - tau[((i + N_old) - 1)]) -
                  mu[((i + N_old) - 1)]) / sigma[((i + N_old) - 1)])),
             "assigning variable Ru");
-          current_statement__ = 42;
+          current_statement__ = 51;
           assign(q, cons_list(index_uni(i), nil_index_list()),
             (stan::math::log(tau[((i + N_old) - 1)]) +
               normal_lpdf<false>(
@@ -1439,7 +1523,7 @@ public:
                   (moult_indices[(i - 1)] * tau[((i + N_old) - 1)])),
                 mu[((i + N_old) - 1)], sigma[((i + N_old) - 1)])),
             "assigning variable q");
-          current_statement__ = 43;
+          current_statement__ = 52;
           assign(log_lik,
             cons_list(index_uni((N_old + i)), nil_index_list()),
             (q[(i - 1)] - log1m(Ru[(i - 1)])), "assigning variable log_lik");
@@ -1462,6 +1546,8 @@ public:
         vars__.emplace_back(log_lik[(sym1__ - 1)]);}
       for (int sym1__ = 1; sym1__ <= N_pred_mu; ++sym1__) {
         vars__.emplace_back(beta_mu_out[(sym1__ - 1)]);}
+      for (int sym1__ = 1; sym1__ <= N_pred_tau; ++sym1__) {
+        vars__.emplace_back(beta_tau_out[(sym1__ - 1)]);}
     } catch (const std::exception& e) {
       stan::lang::rethrow_located(e, locations_array__[current_statement__]);
       // Next line prevents compiler griping about no return
@@ -1667,7 +1753,10 @@ public:
     names__.emplace_back("sigma_mu_ind");
     names__.emplace_back("sigma_intercept");
     names__.emplace_back("beta_star");
+    names__.emplace_back("tau_star");
     names__.emplace_back("mu_ind_star");
+    names__.emplace_back("u_year_mean_star");
+    names__.emplace_back("u_year_duration_star");
     names__.emplace_back("finite_sd");
     names__.emplace_back("Rt");
     names__.emplace_back("P");
@@ -1678,6 +1767,7 @@ public:
     names__.emplace_back("sigma");
     names__.emplace_back("log_lik");
     names__.emplace_back("beta_mu_out");
+    names__.emplace_back("beta_tau_out");
     } // get_param_names() 
     
   inline void get_dims(std::vector<std::vector<size_t>>& dimss__) const {
@@ -1705,7 +1795,13 @@ public:
     
     dimss__.emplace_back(std::vector<size_t>{});
     
+    dimss__.emplace_back(std::vector<size_t>{});
+    
     dimss__.emplace_back(std::vector<size_t>{static_cast<size_t>(N_ind_rep)});
+    
+    dimss__.emplace_back(std::vector<size_t>{static_cast<size_t>(N_years)});
+    
+    dimss__.emplace_back(std::vector<size_t>{static_cast<size_t>(N_years)});
     
     dimss__.emplace_back(std::vector<size_t>{});
     
@@ -1729,6 +1825,8 @@ public:
                                              });
     
     dimss__.emplace_back(std::vector<size_t>{static_cast<size_t>(N_pred_mu)});
+    
+    dimss__.emplace_back(std::vector<size_t>{static_cast<size_t>(N_pred_tau)});
     
     } // get_dims() 
     
@@ -1768,9 +1866,18 @@ public:
     if (emit_transformed_parameters__) {
       param_names__.emplace_back(std::string() + "sigma_intercept");
       param_names__.emplace_back(std::string() + "beta_star");
+      param_names__.emplace_back(std::string() + "tau_star");
       for (int sym1__ = 1; sym1__ <= N_ind_rep; ++sym1__) {
         {
           param_names__.emplace_back(std::string() + "mu_ind_star" + '.' + std::to_string(sym1__));
+        }}
+      for (int sym1__ = 1; sym1__ <= N_years; ++sym1__) {
+        {
+          param_names__.emplace_back(std::string() + "u_year_mean_star" + '.' + std::to_string(sym1__));
+        }}
+      for (int sym1__ = 1; sym1__ <= N_years; ++sym1__) {
+        {
+          param_names__.emplace_back(std::string() + "u_year_duration_star" + '.' + std::to_string(sym1__));
         }}
       param_names__.emplace_back(std::string() + "finite_sd");
     }
@@ -1811,6 +1918,10 @@ public:
       for (int sym1__ = 1; sym1__ <= N_pred_mu; ++sym1__) {
         {
           param_names__.emplace_back(std::string() + "beta_mu_out" + '.' + std::to_string(sym1__));
+        }}
+      for (int sym1__ = 1; sym1__ <= N_pred_tau; ++sym1__) {
+        {
+          param_names__.emplace_back(std::string() + "beta_tau_out" + '.' + std::to_string(sym1__));
         }}
     }
     
@@ -1852,9 +1963,18 @@ public:
     if (emit_transformed_parameters__) {
       param_names__.emplace_back(std::string() + "sigma_intercept");
       param_names__.emplace_back(std::string() + "beta_star");
+      param_names__.emplace_back(std::string() + "tau_star");
       for (int sym1__ = 1; sym1__ <= N_ind_rep; ++sym1__) {
         {
           param_names__.emplace_back(std::string() + "mu_ind_star" + '.' + std::to_string(sym1__));
+        }}
+      for (int sym1__ = 1; sym1__ <= N_years; ++sym1__) {
+        {
+          param_names__.emplace_back(std::string() + "u_year_mean_star" + '.' + std::to_string(sym1__));
+        }}
+      for (int sym1__ = 1; sym1__ <= N_years; ++sym1__) {
+        {
+          param_names__.emplace_back(std::string() + "u_year_duration_star" + '.' + std::to_string(sym1__));
         }}
       param_names__.emplace_back(std::string() + "finite_sd");
     }
@@ -1896,19 +2016,23 @@ public:
         {
           param_names__.emplace_back(std::string() + "beta_mu_out" + '.' + std::to_string(sym1__));
         }}
+      for (int sym1__ = 1; sym1__ <= N_pred_tau; ++sym1__) {
+        {
+          param_names__.emplace_back(std::string() + "beta_tau_out" + '.' + std::to_string(sym1__));
+        }}
     }
     
     } // unconstrained_param_names() 
     
   inline std::string get_constrained_sizedtypes() const {
     stringstream s__;
-    s__ << "[{\"name\":\"beta_mu\",\"type\":{\"name\":\"vector\",\"length\":" << N_pred_mu << "},\"block\":\"parameters\"},{\"name\":\"beta_tau\",\"type\":{\"name\":\"vector\",\"length\":" << N_pred_tau << "},\"block\":\"parameters\"},{\"name\":\"beta_sigma\",\"type\":{\"name\":\"vector\",\"length\":" << N_pred_sigma << "},\"block\":\"parameters\"},{\"name\":\"mu_ind\",\"type\":{\"name\":\"vector\",\"length\":" << N_ind << "},\"block\":\"parameters\"},{\"name\":\"u_year_mean\",\"type\":{\"name\":\"vector\",\"length\":" << N_years << "},\"block\":\"parameters\"},{\"name\":\"u_year_duration\",\"type\":{\"name\":\"vector\",\"length\":" << N_years << "},\"block\":\"parameters\"},{\"name\":\"sd_year_mean\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"sd_year_duration\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"sigma_mu_ind\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"sigma_intercept\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"beta_star\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"mu_ind_star\",\"type\":{\"name\":\"vector\",\"length\":" << N_ind_rep << "},\"block\":\"transformed_parameters\"},{\"name\":\"finite_sd\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"Rt\",\"type\":{\"name\":\"vector\",\"length\":" << N_old << "},\"block\":\"generated_quantities\"},{\"name\":\"P\",\"type\":{\"name\":\"vector\",\"length\":" << N_old << "},\"block\":\"generated_quantities\"},{\"name\":\"Ru\",\"type\":{\"name\":\"vector\",\"length\":" << N_moult << "},\"block\":\"generated_quantities\"},{\"name\":\"q\",\"type\":{\"name\":\"vector\",\"length\":" << N_moult << "},\"block\":\"generated_quantities\"},{\"name\":\"mu\",\"type\":{\"name\":\"vector\",\"length\":" << mu_1dim__ << "},\"block\":\"generated_quantities\"},{\"name\":\"tau\",\"type\":{\"name\":\"vector\",\"length\":" << tau_1dim__ << "},\"block\":\"generated_quantities\"},{\"name\":\"sigma\",\"type\":{\"name\":\"vector\",\"length\":" << sigma_1dim__ << "},\"block\":\"generated_quantities\"},{\"name\":\"log_lik\",\"type\":{\"name\":\"vector\",\"length\":" << log_lik_1dim__ << "},\"block\":\"generated_quantities\"},{\"name\":\"beta_mu_out\",\"type\":{\"name\":\"vector\",\"length\":" << N_pred_mu << "},\"block\":\"generated_quantities\"}]";
+    s__ << "[{\"name\":\"beta_mu\",\"type\":{\"name\":\"vector\",\"length\":" << N_pred_mu << "},\"block\":\"parameters\"},{\"name\":\"beta_tau\",\"type\":{\"name\":\"vector\",\"length\":" << N_pred_tau << "},\"block\":\"parameters\"},{\"name\":\"beta_sigma\",\"type\":{\"name\":\"vector\",\"length\":" << N_pred_sigma << "},\"block\":\"parameters\"},{\"name\":\"mu_ind\",\"type\":{\"name\":\"vector\",\"length\":" << N_ind << "},\"block\":\"parameters\"},{\"name\":\"u_year_mean\",\"type\":{\"name\":\"vector\",\"length\":" << N_years << "},\"block\":\"parameters\"},{\"name\":\"u_year_duration\",\"type\":{\"name\":\"vector\",\"length\":" << N_years << "},\"block\":\"parameters\"},{\"name\":\"sd_year_mean\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"sd_year_duration\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"sigma_mu_ind\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"sigma_intercept\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"beta_star\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"tau_star\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"mu_ind_star\",\"type\":{\"name\":\"vector\",\"length\":" << N_ind_rep << "},\"block\":\"transformed_parameters\"},{\"name\":\"u_year_mean_star\",\"type\":{\"name\":\"vector\",\"length\":" << N_years << "},\"block\":\"transformed_parameters\"},{\"name\":\"u_year_duration_star\",\"type\":{\"name\":\"vector\",\"length\":" << N_years << "},\"block\":\"transformed_parameters\"},{\"name\":\"finite_sd\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"Rt\",\"type\":{\"name\":\"vector\",\"length\":" << N_old << "},\"block\":\"generated_quantities\"},{\"name\":\"P\",\"type\":{\"name\":\"vector\",\"length\":" << N_old << "},\"block\":\"generated_quantities\"},{\"name\":\"Ru\",\"type\":{\"name\":\"vector\",\"length\":" << N_moult << "},\"block\":\"generated_quantities\"},{\"name\":\"q\",\"type\":{\"name\":\"vector\",\"length\":" << N_moult << "},\"block\":\"generated_quantities\"},{\"name\":\"mu\",\"type\":{\"name\":\"vector\",\"length\":" << mu_1dim__ << "},\"block\":\"generated_quantities\"},{\"name\":\"tau\",\"type\":{\"name\":\"vector\",\"length\":" << tau_1dim__ << "},\"block\":\"generated_quantities\"},{\"name\":\"sigma\",\"type\":{\"name\":\"vector\",\"length\":" << sigma_1dim__ << "},\"block\":\"generated_quantities\"},{\"name\":\"log_lik\",\"type\":{\"name\":\"vector\",\"length\":" << log_lik_1dim__ << "},\"block\":\"generated_quantities\"},{\"name\":\"beta_mu_out\",\"type\":{\"name\":\"vector\",\"length\":" << N_pred_mu << "},\"block\":\"generated_quantities\"},{\"name\":\"beta_tau_out\",\"type\":{\"name\":\"vector\",\"length\":" << N_pred_tau << "},\"block\":\"generated_quantities\"}]";
     return s__.str();
     } // get_constrained_sizedtypes() 
     
   inline std::string get_unconstrained_sizedtypes() const {
     stringstream s__;
-    s__ << "[{\"name\":\"beta_mu\",\"type\":{\"name\":\"vector\",\"length\":" << N_pred_mu << "},\"block\":\"parameters\"},{\"name\":\"beta_tau\",\"type\":{\"name\":\"vector\",\"length\":" << N_pred_tau << "},\"block\":\"parameters\"},{\"name\":\"beta_sigma\",\"type\":{\"name\":\"vector\",\"length\":" << N_pred_sigma << "},\"block\":\"parameters\"},{\"name\":\"mu_ind\",\"type\":{\"name\":\"vector\",\"length\":" << N_ind << "},\"block\":\"parameters\"},{\"name\":\"u_year_mean\",\"type\":{\"name\":\"vector\",\"length\":" << N_years << "},\"block\":\"parameters\"},{\"name\":\"u_year_duration\",\"type\":{\"name\":\"vector\",\"length\":" << N_years << "},\"block\":\"parameters\"},{\"name\":\"sd_year_mean\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"sd_year_duration\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"sigma_mu_ind\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"sigma_intercept\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"beta_star\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"mu_ind_star\",\"type\":{\"name\":\"vector\",\"length\":" << N_ind_rep << "},\"block\":\"transformed_parameters\"},{\"name\":\"finite_sd\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"Rt\",\"type\":{\"name\":\"vector\",\"length\":" << N_old << "},\"block\":\"generated_quantities\"},{\"name\":\"P\",\"type\":{\"name\":\"vector\",\"length\":" << N_old << "},\"block\":\"generated_quantities\"},{\"name\":\"Ru\",\"type\":{\"name\":\"vector\",\"length\":" << N_moult << "},\"block\":\"generated_quantities\"},{\"name\":\"q\",\"type\":{\"name\":\"vector\",\"length\":" << N_moult << "},\"block\":\"generated_quantities\"},{\"name\":\"mu\",\"type\":{\"name\":\"vector\",\"length\":" << mu_1dim__ << "},\"block\":\"generated_quantities\"},{\"name\":\"tau\",\"type\":{\"name\":\"vector\",\"length\":" << tau_1dim__ << "},\"block\":\"generated_quantities\"},{\"name\":\"sigma\",\"type\":{\"name\":\"vector\",\"length\":" << sigma_1dim__ << "},\"block\":\"generated_quantities\"},{\"name\":\"log_lik\",\"type\":{\"name\":\"vector\",\"length\":" << log_lik_1dim__ << "},\"block\":\"generated_quantities\"},{\"name\":\"beta_mu_out\",\"type\":{\"name\":\"vector\",\"length\":" << N_pred_mu << "},\"block\":\"generated_quantities\"}]";
+    s__ << "[{\"name\":\"beta_mu\",\"type\":{\"name\":\"vector\",\"length\":" << N_pred_mu << "},\"block\":\"parameters\"},{\"name\":\"beta_tau\",\"type\":{\"name\":\"vector\",\"length\":" << N_pred_tau << "},\"block\":\"parameters\"},{\"name\":\"beta_sigma\",\"type\":{\"name\":\"vector\",\"length\":" << N_pred_sigma << "},\"block\":\"parameters\"},{\"name\":\"mu_ind\",\"type\":{\"name\":\"vector\",\"length\":" << N_ind << "},\"block\":\"parameters\"},{\"name\":\"u_year_mean\",\"type\":{\"name\":\"vector\",\"length\":" << N_years << "},\"block\":\"parameters\"},{\"name\":\"u_year_duration\",\"type\":{\"name\":\"vector\",\"length\":" << N_years << "},\"block\":\"parameters\"},{\"name\":\"sd_year_mean\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"sd_year_duration\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"sigma_mu_ind\",\"type\":{\"name\":\"real\"},\"block\":\"parameters\"},{\"name\":\"sigma_intercept\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"beta_star\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"tau_star\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"mu_ind_star\",\"type\":{\"name\":\"vector\",\"length\":" << N_ind_rep << "},\"block\":\"transformed_parameters\"},{\"name\":\"u_year_mean_star\",\"type\":{\"name\":\"vector\",\"length\":" << N_years << "},\"block\":\"transformed_parameters\"},{\"name\":\"u_year_duration_star\",\"type\":{\"name\":\"vector\",\"length\":" << N_years << "},\"block\":\"transformed_parameters\"},{\"name\":\"finite_sd\",\"type\":{\"name\":\"real\"},\"block\":\"transformed_parameters\"},{\"name\":\"Rt\",\"type\":{\"name\":\"vector\",\"length\":" << N_old << "},\"block\":\"generated_quantities\"},{\"name\":\"P\",\"type\":{\"name\":\"vector\",\"length\":" << N_old << "},\"block\":\"generated_quantities\"},{\"name\":\"Ru\",\"type\":{\"name\":\"vector\",\"length\":" << N_moult << "},\"block\":\"generated_quantities\"},{\"name\":\"q\",\"type\":{\"name\":\"vector\",\"length\":" << N_moult << "},\"block\":\"generated_quantities\"},{\"name\":\"mu\",\"type\":{\"name\":\"vector\",\"length\":" << mu_1dim__ << "},\"block\":\"generated_quantities\"},{\"name\":\"tau\",\"type\":{\"name\":\"vector\",\"length\":" << tau_1dim__ << "},\"block\":\"generated_quantities\"},{\"name\":\"sigma\",\"type\":{\"name\":\"vector\",\"length\":" << sigma_1dim__ << "},\"block\":\"generated_quantities\"},{\"name\":\"log_lik\",\"type\":{\"name\":\"vector\",\"length\":" << log_lik_1dim__ << "},\"block\":\"generated_quantities\"},{\"name\":\"beta_mu_out\",\"type\":{\"name\":\"vector\",\"length\":" << N_pred_mu << "},\"block\":\"generated_quantities\"},{\"name\":\"beta_tau_out\",\"type\":{\"name\":\"vector\",\"length\":" << N_pred_tau << "},\"block\":\"generated_quantities\"}]";
     return s__.str();
     } // get_unconstrained_sizedtypes() 
     

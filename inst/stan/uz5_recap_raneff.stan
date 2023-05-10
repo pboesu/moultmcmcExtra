@@ -55,14 +55,7 @@ parameters {
 }
 
 transformed parameters{
-  real sigma_intercept = exp(beta_sigma[1]);
-  //post-sweep random effects
-  real beta_star = beta_mu[1] + mean(mu_ind) + mean(u_year_mean);
-  real tau_star = beta_tau[1] + mean(u_year_duration);
-  vector[N_ind_rep] mu_ind_star = mu_ind - mean(mu_ind);
-  vector[N_years] u_year_mean_star = u_year_mean - mean(u_year_mean);
-  vector[N_years] u_year_duration_star = u_year_duration - mean(u_year_duration);
-  real finite_sd = sd(mu_ind_star);
+
 }
 
 // The model to be estimated.
@@ -135,6 +128,14 @@ generated quantities{
   vector[N_ind_rep] mu_ind_out;//individual intercepts for output
   vector[N_pred_mu] beta_mu_out;//post-swept regression coefficients for start date
   vector[N_pred_tau] beta_tau_out;//post-swept regression coefficients for duration
+  real sigma_intercept = exp(beta_sigma[1]);
+  //post-sweep random effects
+  real beta_star = beta_mu[1] + mean(mu_ind) + mean(u_year_mean);
+  real tau_star = beta_tau[1] + mean(u_year_duration);
+  vector[N_ind_rep] mu_ind_star = mu_ind - mean(mu_ind);
+  vector[N_years] u_year_mean_star = u_year_mean - mean(u_year_mean);
+  vector[N_years] u_year_duration_star = u_year_duration - mean(u_year_duration);
+  real finite_sd = sd(mu_ind_star);
 
   if (N_pred_mu > 1){
     beta_mu_out = append_row(beta_star,beta_mu[2:N_pred_mu]);// collate post-swept intercept with remaining
