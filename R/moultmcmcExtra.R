@@ -50,7 +50,7 @@ moultmcmc_ranef <- function(moult_column,
                         duration_formula = ~1,
                         sigma_formula = ~1,
                         year_factor_column,
-                        type = 2,
+                        type = 5,
                         lump_non_moult = FALSE,
                         data,
                         init = "auto",
@@ -75,6 +75,7 @@ moultmcmc_ranef <- function(moult_column,
   data <- model.frame(nlme::asOneFormula(start_formula, duration_formula, sigma_formula, implicit_vars_formula), data = data)
 
   #check data encoding is as expected
+  if(type != 5) stop("only type 5 models are currently implemented in moultmcmc_ranef")
   stopifnot(is.factor(data[[year_factor_column]]))
   stopifnot(is.numeric(data[[date_column]]))
   if(type %in% c(2:5)) {
