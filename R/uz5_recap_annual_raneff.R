@@ -147,14 +147,14 @@ compare_plot_annual_raneff <- function(...,names = NULL){
 
   plotdata <- dplyr::bind_rows(lapply(parlist, function(x){moultmcmc::summary_table(x)}), .id = 'model')
   plotdata$not_converged <- ifelse(plotdata$Rhat > 1.05 & !is.na(plotdata$Rhat), TRUE, FALSE)#TODO: This falls over when there are only ML models in the mix
-  dplyr::filter(plotdata, !grepl("lp__|log_sd_\\(Intercept\\)|\\blp\\b|log_lik[[0-9]+]|mu_ind[[0-9]+]|mu_ind_star|u_year|finite_sd|beta_star", .data$parameter)) %>%
+  dplyr::filter(plotdata, !grepl("lp__|log_sd_\\(Intercept\\)|\\blp\\b|log_lik[[0-9]+]|mu_ind[[0-9]+]|mu_ind_star|u_year|finite_sd|beta_star", .data$parameter)) |>
     ggplot(aes(x = .data$model, y = .data$estimate, col = .data$model, ymin = .data$lci, ymax = .data$uci, shape = .data$not_converged)) + geom_pointrange(position = position_dodge(0.1)) + facet_wrap(~ .data$parameter, scales = 'free') -> fixefs_plot
-  dplyr::filter(plotdata, grepl("u_year", .data$parameter)) %>%
+  dplyr::filter(plotdata, grepl("u_year", .data$parameter)) |>
     mutate(parent_parameter = stringr::str_replace(.data$parameter, '\\[[0-9]+\\]', ''),
            raneff_level = as.numeric(stringr::str_replace_all(stringr::str_extract(.data$parameter, '\\[[0-9]+\\]'), '\\[|\\]', ''))) -> raneff_data
   #construct dummy rows for models without random effects so the colour scale is uniform across sections
   dummy_tibble = tidyr::expand_grid(model = names, parent_parameter = unique(raneff_data$parent_parameter))
-bind_rows(raneff_data, dummy_tibble) %>%
+bind_rows(raneff_data, dummy_tibble) |>
     ggplot(aes(x = .data$raneff_level, y = .data$estimate, col = .data$model, ymin = .data$lci, ymax = .data$uci, shape = .data$not_converged)) + geom_pointrange(position = position_dodge(0.1)) + facet_wrap(~ .data$parent_parameter, scales = 'free') +
     scale_colour_discrete(drop = FALSE) -> ranefs_plot
   return(cowplot::plot_grid(fixefs_plot,
