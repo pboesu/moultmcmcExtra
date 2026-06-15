@@ -12,9 +12,9 @@
 #' @param data Input data frame
 #' @param init Specification of initial values for all or some parameters. Can be the string "auto" for an automatic guess based on the data, or any of the permitted rstan options: the digit 0, the strings "0" or "random", or a function. See the detailed documentation for the init argument in ?rstan::stan.
 #' @param log_lik boolean retain pointwise log-likelihood in output? This enables model assessment and selection via the loo package. Defaults to true, can lead to very large output arrays if sample size is large.
-#' @standata_only do not fit model but return standata object instead
+#' @param standata_only logical; if TRUE, return the Stan data list (standata) without fitting the model.
 #' @param ... Arguments passed to `rstan::sampling` (e.g. iter, chains).
-#' @return An object of class `stanfit` returned by `rstan::sampling`
+#' @return When `standata_only = FALSE`, an object of class `stanfit` returned by `rstan::sampling`; otherwise the Stan data list (standata).
 #' @importFrom stats model.matrix sd
 #'
 uz5_linpred_recap_annual_raneff <- function(moult_index_column, date_column, id_column, start_formula = ~1, duration_formula = ~1, sigma_formula = ~1, year_factor_column, beta_sd = 0, data, init = "auto", log_lik = TRUE,standata_only=FALSE,...) {

@@ -62,7 +62,7 @@ sample_one_year <- function(pop_start = 150,
       } else {
         stop('undefined sampling bias scheme')
       }}
-    print(ceiling(sample_per_occ*sample_size_weight))
+    # print(ceiling(sample_per_occ * sample_size_weight))
     individuals_captured <- sample(individuals$ID, size = ceiling(sample_per_occ*sample_size_weight), prob = individuals$p_det)
     data_out[[i]] <- filter(individuals, ID %in% individuals_captured) %>%
       mutate(yday = day,

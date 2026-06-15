@@ -18,7 +18,8 @@
 #' @param use_phi_approx logical flag whether to use stan's Phi_approx function to calculate the "old" likelihoods
 #' @param active_moult_recaps_only logical flag whether to ignore repeated observations outside the active moult phase
 #' @param same_sigma logical flag, currently unused
-#' @standata_only do not fit model but return standata object instead
+#' @param standata_only logical; if TRUE, return the Stan data list (standata) without fitting the model.
+#' @param all_pars logical; if TRUE, do not restrict `pars` in `rstan::sampling` (return all parameters).
 #' @param ... Arguments passed to `rstan::sampling` (e.g. iter, chains).
 #'
 #' @details
