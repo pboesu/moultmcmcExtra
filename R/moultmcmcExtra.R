@@ -18,6 +18,8 @@
 #' @param use_phi_approx logical flag whether to use stan's Phi_approx function to calculate the "old" likelihoods
 #' @param active_moult_recaps_only logical flag whether to ignore repeated observations outside the active moult phase
 #' @param same_sigma logical flag, currently unused
+#' @param standata_only logical; if TRUE, return the Stan data list (standata) without fitting the model.
+#' @param all_pars logical; if TRUE, do not restrict `pars` in `rstan::sampling` (return all parameters).
 #' @param ... Arguments passed to `rstan::sampling` (e.g. iter, chains).
 #'
 #' @details
@@ -49,7 +51,7 @@ moultmcmc_ranef <- function(moult_column,
                         duration_formula = ~1,
                         sigma_formula = ~1,
                         year_factor_column,
-                        type = 2,
+                        type = 5,
                         lump_non_moult = FALSE,
                         data,
                         init = "auto",
@@ -59,6 +61,8 @@ moultmcmc_ranef <- function(moult_column,
                         use_phi_approx = FALSE,
                         active_moult_recaps_only = TRUE,
                         same_sigma = FALSE,
+                        standata_only=FALSE,
+                        all_pars=FALSE,
                         ...) {
   #check input data are as expected
   stopifnot(is.data.frame(data))
@@ -72,6 +76,7 @@ moultmcmc_ranef <- function(moult_column,
   data <- model.frame(nlme::asOneFormula(start_formula, duration_formula, sigma_formula, implicit_vars_formula), data = data)
 
   #check data encoding is as expected
+  if(type != 5) stop("only type 5 models are currently implemented in moultmcmc_ranef")
   stopifnot(is.factor(data[[year_factor_column]]))
   stopifnot(is.numeric(data[[date_column]]))
   if(type %in% c(2:5)) {
@@ -187,6 +192,10 @@ moultmcmc_ranef <- function(moult_column,
     standata$N_moult_cat = length(data[[date_column]][data[[moult_column]]==2])
     standata$moult_cat_dates =data[[date_column]][data[[moult_column]]==2]
   }
+
+  #return standata object
+  if(standata_only){return(standata)}
+
   #include pointwise log_lik matrix  in output?
   if(log_lik){
     outpars <- c('beta_mu','beta_tau','beta_sigma', 'sigma_intercept', 'log_lik',
@@ -195,6 +204,7 @@ moultmcmc_ranef <- function(moult_column,
     outpars <- c('beta_mu','beta_tau','beta_sigma', 'sigma_intercept',
                  'u_year_mean','u_year_mean_star', 'u_year_duration','u_year_duration_star', 'sd_year_mean', 'sd_year_duration')
   }
+  if(all_pars){outpars = NA}
   #get name of relevant model object
   if (is.null(id_column)){
     stan_model_name <- paste0('uz',type,'_linpred_raneff')
@@ -223,11 +233,14 @@ moultmcmc_ranef <- function(moult_column,
   } else {
     out <- rstan::sampling(stanmodels[[stan_model_name]], data = standata, init = init, pars = outpars, ...)
   }
-  #rename regression coefficients for output
-  names(out)[grep('beta_mu', names(out))] <- paste('mean',colnames(X_mu), sep = '_')
-  names(out)[grep('beta_tau', names(out))] <- paste('duration',colnames(X_tau), sep = '_')
-  names(out)[grep('beta_sigma', names(out))] <- paste('log_sd',colnames(X_sigma), sep = '_')
-  names(out)[grep('sigma_intercept', names(out))] <- 'sd_(Intercept)'
+  #rename regression coefficients for output unless all_pars argument is set
+  if(!all_pars){
+    names(out)[grep('beta_mu', names(out))] <- paste('mean',colnames(X_mu), sep = '_')
+    names(out)[grep('beta_tau', names(out))] <- paste('duration',colnames(X_tau), sep = '_')
+    names(out)[grep('beta_sigma', names(out))] <- paste('log_sd',colnames(X_sigma), sep = '_')
+    names(out)[grep('sigma_intercept', names(out))] <- 'sd_(Intercept)'
+  }
+
   out_struc <- list()
   out_struc$stanfit <- out
   out_struc$terms$date_column <- date_column
