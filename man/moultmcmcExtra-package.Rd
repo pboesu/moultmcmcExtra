@@ -2,16 +2,14 @@
 % Please edit documentation in R/moultmcmcExtra-package.R
 \docType{package}
 \name{moultmcmcExtra-package}
-\alias{moultmcmcExtra-package}
 \alias{moultmcmcExtra}
+\alias{moultmcmcExtra-package}
 \title{The 'moultmcmcExtra' package.}
 \description{
-A DESCRIPTION OF THE PACKAGE
-}
-\references{
-Stan Development Team (NA). RStan: the R interface to Stan. R package version 2.26.11. https://mc-stan.org
+Add-on functionality for moultmcmc
 }
 \author{
 \strong{Maintainer}: Philipp Boersch-Supan \email{pboesu@gmail.com} (\href{https://orcid.org/0000-0001-6723-6833}{ORCID})
 
 }
+\keyword{internal}
