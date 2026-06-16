@@ -11,3 +11,7 @@ A DESCRIPTION OF THE PACKAGE
 \references{
 Stan Development Team (NA). RStan: the R interface to Stan. R package version 2.26.11. https://mc-stan.org
 }
+\author{
+\strong{Maintainer}: Philipp Boersch-Supan \email{pboesu@gmail.com} (\href{https://orcid.org/0000-0001-6723-6833}{ORCID})
+
+}
