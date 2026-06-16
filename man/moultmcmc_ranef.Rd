@@ -12,7 +12,7 @@ moultmcmc_ranef(
   duration_formula = ~1,
   sigma_formula = ~1,
   year_factor_column,
-  type = 2,
+  type = 5,
   lump_non_moult = FALSE,
   data,
   init = "auto",
@@ -22,6 +22,8 @@ moultmcmc_ranef(
   use_phi_approx = FALSE,
   active_moult_recaps_only = TRUE,
   same_sigma = FALSE,
+  standata_only = FALSE,
+  all_pars = FALSE,
   ...
 )
 }
@@ -59,6 +61,10 @@ moultmcmc_ranef(
 \item{active_moult_recaps_only}{logical flag whether to ignore repeated observations outside the active moult phase}
 
 \item{same_sigma}{logical flag, currently unused}
+
+\item{standata_only}{logical; if TRUE, return the Stan data list (standata) without fitting the model.}
+
+\item{all_pars}{logical; if TRUE, do not restrict \code{pars} in \code{rstan::sampling} (return all parameters).}
 
 \item{...}{Arguments passed to \code{rstan::sampling} (e.g. iter, chains).}
 }

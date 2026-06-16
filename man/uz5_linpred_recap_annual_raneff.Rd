@@ -16,6 +16,7 @@ uz5_linpred_recap_annual_raneff(
   data,
   init = "auto",
   log_lik = TRUE,
+  standata_only = FALSE,
   ...
 )
 }
@@ -42,10 +43,12 @@ uz5_linpred_recap_annual_raneff(
 
 \item{log_lik}{boolean retain pointwise log-likelihood in output? This enables model assessment and selection via the loo package. Defaults to true, can lead to very large output arrays if sample size is large.}
 
+\item{standata_only}{logical; if TRUE, return the Stan data list (standata) without fitting the model.}
+
 \item{...}{Arguments passed to \code{rstan::sampling} (e.g. iter, chains).}
 }
 \value{
-An object of class \code{stanfit} returned by \code{rstan::sampling}
+When \code{standata_only = FALSE}, an object of class \code{stanfit} returned by \code{rstan::sampling}; otherwise the Stan data list (standata).
 }
 \description{
 Bayesian inference for the Type 5 moult model with repeat measures and an additional annual random intercept

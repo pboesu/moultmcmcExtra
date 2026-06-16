@@ -18,7 +18,6 @@ Imports:
     ggplot2,
     graphics,
     grDevices,
-    magrittr,
     MASS,
     matrixStats,
     methods,
