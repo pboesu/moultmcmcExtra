@@ -5,3 +5,5 @@
 .DS_Store
 src/*.o
 src/*.dll
+src/*.cc
+src/*.h
