@@ -20,6 +20,9 @@
 #'   birds are treated as indistinguishable? Defaults to FALSE
 #' @param use_phi_approx logical; use `Phi_approx` instead of `Phi` for computational
 #'   efficiency? Defaults to FALSE
+#' @param raneff_components character vector specifying which linear predictors receive
+#'   annual random intercepts. Any combination of `"start"` (start date) and `"duration"`.
+#'   Defaults to `c("start", "duration")` (both).
 #' @param beta_sd use zero-centred normal priors for regression coefficients other than
 #'   intercepts? If <= 0 Stan's default improper flat priors are used
 #' @param data input data frame
@@ -36,6 +39,7 @@
 uz2_recap_annual_raneff <- function(moult_index_column, date_column, id_column,
                                     start_formula = ~1, duration_formula = ~1, sigma_formula = ~1,
                                     year_factor_column,
+                                    raneff_components = c("start", "duration"),
                                     flat_prior = FALSE, lumped = FALSE, use_phi_approx = FALSE,
                                     beta_sd = 0,
                                     data, init = "auto", log_lik = TRUE, standata_only = FALSE, ...) {
@@ -64,12 +68,17 @@ uz2_recap_annual_raneff <- function(moult_index_column, date_column, id_column,
   replicated     <- which(data[[id_column]] %in% names(tab[tab > 1]))
   is_replicated  <- as.integer(ifelse(tab > 1, 1, 0))
 
+  raneff_mu  <- as.integer("start"    %in% raneff_components)
+  raneff_tau <- as.integer("duration" %in% raneff_components)
+
   standata <- list(
     flat_prior       = as.integer(flat_prior),
     beta_sd          = beta_sd,
     lumped           = as.integer(lumped),
     llik             = as.integer(log_lik),
     use_phi_approx   = as.integer(use_phi_approx),
+    raneff_mu        = raneff_mu,
+    raneff_tau       = raneff_tau,
     N_ind            = length(unique(data[[id_column]])),
     N_ind_rep        = length(unique(as.numeric(data[[id_column]])[replicated])),
     N_old            = N_old,
@@ -97,10 +106,10 @@ uz2_recap_annual_raneff <- function(moult_index_column, date_column, id_column,
   if (standata_only) return(standata)
 
   outpars <- c('beta_mu_out', 'beta_tau_out', 'beta_tau', 'beta_sigma', 'sigma_intercept',
-               'u_year_mean', 'u_year_mean_star', 'u_year_duration', 'u_year_duration_star',
-               'sd_year_mean', 'sd_year_duration',
                'sigma_mu_ind', 'beta_star', 'finite_sd', 'mu_ind_star')
-  if (log_lik) outpars <- c(outpars, 'log_lik')
+  if (raneff_mu)  outpars <- c(outpars, 'u_year_mean', 'u_year_mean_star', 'sd_year_mean')
+  if (raneff_tau) outpars <- c(outpars, 'u_year_duration', 'u_year_duration_star', 'sd_year_duration')
+  if (log_lik)    outpars <- c(outpars, 'log_lik')
 
   if (init == "auto") {
     mu_start    <- mean(c(min(standata$moult_dates), max(standata$old_dates)))
@@ -162,6 +171,9 @@ uz2_recap_annual_raneff <- function(moult_index_column, date_column, id_column,
 #' @param flat_prior logical; use flat (uniform) priors on start date and duration
 #'   intercepts? Defaults to FALSE (weakly informative normal priors)
 #' @param lumped logical; use the lumped (Type 2L) likelihood? Defaults to FALSE
+#' @param raneff_components character vector specifying which linear predictors receive
+#'   annual random intercepts. Any combination of `"start"` (start date) and `"duration"`.
+#'   Defaults to `c("start", "duration")` (both).
 #' @param beta_sd use zero-centred normal priors for regression coefficients other than
 #'   intercepts? If <= 0 Stan's default improper flat priors are used
 #' @param data input data frame
@@ -177,6 +189,7 @@ uz2_recap_annual_raneff <- function(moult_index_column, date_column, id_column,
 uz2_linpred_annual_raneff <- function(moult_index_column, date_column,
                                       start_formula = ~1, duration_formula = ~1, sigma_formula = ~1,
                                       year_factor_column,
+                                      raneff_components = c("start", "duration"),
                                       flat_prior = FALSE, lumped = FALSE,
                                       beta_sd = 0,
                                       data, init = "auto", log_lik = TRUE, standata_only = FALSE, ...) {
@@ -195,11 +208,16 @@ uz2_linpred_annual_raneff <- function(moult_index_column, date_column,
   N_moult <- sum(data[[moult_index_column]] >  0 & data[[moult_index_column]] < 1)
   N_new   <- sum(data[[moult_index_column]] == 1)
 
+  raneff_mu  <- as.integer("start"    %in% raneff_components)
+  raneff_tau <- as.integer("duration" %in% raneff_components)
+
   standata <- list(
     flat_prior    = as.integer(flat_prior),
     beta_sd       = beta_sd,
     lumped        = as.integer(lumped),
     llik          = as.integer(log_lik),
+    raneff_mu     = raneff_mu,
+    raneff_tau    = raneff_tau,
     N_old         = N_old,
     N_moult       = N_moult,
     N_new         = N_new,
@@ -220,9 +238,10 @@ uz2_linpred_annual_raneff <- function(moult_index_column, date_column,
   if (standata_only) return(standata)
 
   outpars <- c('beta_mu_out', 'beta_tau_out', 'beta_tau', 'beta_sigma', 'sigma_intercept',
-               'u_year_mean', 'u_year_mean_star', 'u_year_duration', 'u_year_duration_star',
-               'sd_year_mean', 'sd_year_duration', 'beta_star')
-  if (log_lik) outpars <- c(outpars, 'log_lik')
+               'beta_star')
+  if (raneff_mu)  outpars <- c(outpars, 'u_year_mean', 'u_year_mean_star', 'sd_year_mean')
+  if (raneff_tau) outpars <- c(outpars, 'u_year_duration', 'u_year_duration_star', 'sd_year_duration')
+  if (log_lik)    outpars <- c(outpars, 'log_lik')
 
   if (init == "auto") {
     mu_start    <- mean(c(min(standata$moult_dates), max(standata$old_dates)))

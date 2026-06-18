@@ -12,6 +12,7 @@ uz5_linpred_recap_annual_raneff(
   duration_formula = ~1,
   sigma_formula = ~1,
   year_factor_column,
+  raneff_components = c("start", "duration"),
   beta_sd = 0,
   data,
   init = "auto",
@@ -34,6 +35,10 @@ uz5_linpred_recap_annual_raneff(
 \item{sigma_formula}{model formula for start date sigma}
 
 \item{year_factor_column}{the name of a factor column in data that contains year_factor values}
+
+\item{raneff_components}{character vector specifying which linear predictors receive
+annual random intercepts. Any combination of \code{"start"} (start date) and \code{"duration"}.
+Defaults to \code{c("start", "duration")} (both).}
 
 \item{beta_sd}{use zero-centred normal priors for regression coefficients other than intercepts? If <= 0 the stan default of improper flat priors is used.}
 

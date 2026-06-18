@@ -18,6 +18,7 @@
 #' @param use_phi_approx logical flag whether to use stan's Phi_approx function to calculate the "old" likelihoods
 #' @param active_moult_recaps_only logical flag whether to ignore repeated observations outside the active moult phase
 #' @param same_sigma logical flag, currently unused
+#' @param raneff_components character vector specifying which linear predictors receive annual random intercepts. Any combination of `"start"` (start date) and `"duration"`. Defaults to `c("start", "duration")` (both).
 #' @param standata_only logical; if TRUE, return the Stan data list (standata) without fitting the model.
 #' @param all_pars logical; if TRUE, do not restrict `pars` in `rstan::sampling` (return all parameters).
 #' @param ... Arguments passed to `rstan::sampling` (e.g. iter, chains).
@@ -61,6 +62,7 @@ moultmcmc_ranef <- function(moult_column,
                         use_phi_approx = FALSE,
                         active_moult_recaps_only = TRUE,
                         same_sigma = FALSE,
+                        raneff_components = c("start", "duration"),
                         standata_only=FALSE,
                         all_pars=FALSE,
                         ...) {
@@ -139,7 +141,9 @@ moultmcmc_ranef <- function(moult_column,
                    flat_prior = as.numeric(flat_prior),
                    beta_sd = beta_sd,
                    year_factor = as.integer(data[[year_factor_column]]),
-                   N_years = length(unique(data[[year_factor_column]])))
+                   N_years = length(unique(data[[year_factor_column]])),
+                   raneff_mu  = as.integer("start"    %in% raneff_components),
+                   raneff_tau = as.integer("duration" %in% raneff_components))
   # setup replication information
   if (!is.null(id_column)){
     stopifnot(is.factor(data[[id_column]]))
@@ -196,14 +200,10 @@ moultmcmc_ranef <- function(moult_column,
   #return standata object
   if(standata_only){return(standata)}
 
-  #include pointwise log_lik matrix  in output?
-  if(log_lik){
-    outpars <- c('beta_mu','beta_tau','beta_sigma', 'sigma_intercept', 'log_lik',
-                 'u_year_mean','u_year_mean_star', 'u_year_duration','u_year_duration_star', 'sd_year_mean', 'sd_year_duration')
-  } else {
-    outpars <- c('beta_mu','beta_tau','beta_sigma', 'sigma_intercept',
-                 'u_year_mean','u_year_mean_star', 'u_year_duration','u_year_duration_star', 'sd_year_mean', 'sd_year_duration')
-  }
+  outpars <- c('beta_mu', 'beta_tau', 'beta_sigma', 'sigma_intercept')
+  if ("start"    %in% raneff_components) outpars <- c(outpars, 'u_year_mean', 'u_year_mean_star', 'sd_year_mean')
+  if ("duration" %in% raneff_components) outpars <- c(outpars, 'u_year_duration', 'u_year_duration_star', 'sd_year_duration')
+  if (log_lik)                           outpars <- c(outpars, 'log_lik')
   if(all_pars){outpars = NA}
   #get name of relevant model object
   model_map <- list(

@@ -35,6 +35,8 @@ data {
   real beta_sd;
   int year_factor[N_old+N_moult];//year factor for each observation
   int N_years;//numebr of unique year_factor values
+  int<lower=0,upper=1> raneff_mu;  // include annual random effect on start date?
+  int<lower=0,upper=1> raneff_tau; // include annual random effect on duration?
 }
 
 // The parameters accepted by the model. Our model
@@ -57,11 +59,11 @@ parameters {
 transformed parameters{
   real sigma_intercept = exp(beta_sigma[1]);
   //post-sweep random effects
-  real beta_star = beta_mu[1] + mean(mu_ind[replicated_individuals]) + mean(u_year_mean);
-  real tau_star = beta_tau[1] + mean(u_year_duration);
-  vector[N_ind_rep] mu_ind_star = mu_ind[replicated_individuals] - mean(mu_ind[replicated_individuals]);
-  vector[N_years] u_year_mean_star = u_year_mean - mean(u_year_mean);
-  vector[N_years] u_year_duration_star = u_year_duration - mean(u_year_duration);
+  real beta_star = beta_mu[1] + mean(mu_ind[replicated_individuals]) + raneff_mu  * mean(u_year_mean);
+  real tau_star  = beta_tau[1]                                        + raneff_tau * mean(u_year_duration);
+  vector[N_ind_rep] mu_ind_star         = mu_ind[replicated_individuals] - mean(mu_ind[replicated_individuals]);
+  vector[N_years]   u_year_mean_star    = raneff_mu  * (u_year_mean - mean(u_year_mean));
+  vector[N_years]   u_year_duration_star = raneff_tau * (u_year_duration - mean(u_year_duration));
   real finite_sd = sd(mu_ind_star);
 }
 
@@ -75,11 +77,9 @@ model {
   vector[N_old+N_moult] tau;//duration lin pred
   vector[N_old+N_moult] sigma;//duration lin pred
 
-  mu = X_mu * beta_mu + u_year_mean[year_factor];
-//  print(mu);
-  tau = X_tau * beta_tau + u_year_duration[year_factor];
-//  print(tau);
-  sigma = exp(X_sigma * beta_sigma);//use log link for variance lin pred
+  mu    = X_mu  * beta_mu  + raneff_mu  * u_year_mean[year_factor];
+  tau   = X_tau * beta_tau + raneff_tau * u_year_duration[year_factor];
+  sigma = exp(X_sigma * beta_sigma);
 
 for (i in 1:N_old) {
 	if (is_replicated[individual[i]] == 1) {//longitudinal tobit-like likelihood (this only makes sense if within year recaptures contain at least one active moult score?!)
@@ -91,10 +91,10 @@ for (i in 1:N_old) {
 }
 for (i in 1:N_moult){
   if (is_replicated[individual[i + N_old]] == 1) {
-   q[i] = normal_lpdf((moult_dates[i] - moult_indices[i]*tau[i + N_old]) | mu[i + N_old] + mu_ind[individual[i + N_old]], sigma_mu_ind);//replicated individuals. NB - indexing looks messy because i runs from 1:N_moult, but the function uses both vectors of the total dataset (1:(N_old+N_moult) and the moult dataset (1:N_moult))
+   q[i] = normal_lpdf((moult_dates[i] - moult_indices[i]*tau[i + N_old]) | mu[i + N_old] + mu_ind[individual[i + N_old]], sigma_mu_ind);//replicated individuals.
   } else {
    Ru[i] = Phi((moult_dates[i] - tau[i + N_old] - mu[i + N_old])/sigma[i + N_old]);
-   q[i] = log(tau[i + N_old]) + normal_lpdf((moult_dates[i] - moult_indices[i]*tau[i + N_old]) | mu[i + N_old], sigma[i + N_old]);//N.B. unlike P and R this returns a log density
+   q[i] = log(tau[i + N_old]) + normal_lpdf((moult_dates[i] - moult_indices[i]*tau[i + N_old]) | mu[i + N_old], sigma[i + N_old]);
   }
 }
 mu_ind[replicated_individuals] ~ normal(0, sigma[individual_first_index][replicated_individuals]);//
@@ -172,11 +172,9 @@ generated quantities{
     beta_tau_out[1] = tau_star;// intercept-only model
   }
 
-  mu = X_mu * beta_mu + u_year_mean[year_factor];
-//  print(mu);
-  tau = X_tau * beta_tau + u_year_duration[year_factor];
-//  print(tau);
-  sigma = exp(X_sigma * beta_sigma);//use log link for variance lin pred
+  mu    = X_mu  * beta_mu  + raneff_mu  * u_year_mean[year_factor];
+  tau   = X_tau * beta_tau + raneff_tau * u_year_duration[year_factor];
+  sigma = exp(X_sigma * beta_sigma);
 
 for (i in 1:N_old) {
 	if (is_replicated[individual[i]] == 1) {//longitudinal tobit-like likelihood (this only makes sense if within year recaptures contain at least one active moult score?!)

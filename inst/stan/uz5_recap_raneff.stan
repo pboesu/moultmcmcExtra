@@ -35,6 +35,8 @@ data {
   matrix[N_old+N_moult,N_pred_sigma] X_sigma;//design matrix for sigma start NB: when forming design matrix must paste together responses in blocks old, moult, new
   int year_factor[N_old+N_moult];//year factor for each observation
   int N_years;//numebr of unique year_factor values
+  int<lower=0,upper=1> raneff_mu;  // include annual random effect on start date?
+  int<lower=0,upper=1> raneff_tau; // include annual random effect on duration?
 }
 
 // The parameters accepted by the model. Our model
@@ -68,11 +70,9 @@ model {
   vector[N_old+N_moult] tau;//duration lin pred
   vector[N_old+N_moult] sigma;//duration lin pred
 
-  mu = X_mu * beta_mu + u_year_mean[year_factor];
-//  print(mu);
-  tau = X_tau * beta_tau + u_year_duration[year_factor];
-//  print(tau);
-  sigma = exp(X_sigma * beta_sigma);//use log link for variance lin pred
+  mu    = X_mu  * beta_mu  + raneff_mu  * u_year_mean[year_factor];
+  tau   = X_tau * beta_tau + raneff_tau * u_year_duration[year_factor];
+  sigma = exp(X_sigma * beta_sigma);
 
 for (i in 1:N_old) {
 	if (is_replicated[individual[i]] == 1) {//longitudinal tobit-like likelihood (this only makes sense if within year recaptures contain at least one active moult score?!)
@@ -130,11 +130,11 @@ generated quantities{
   vector[N_pred_tau] beta_tau_out;//post-swept regression coefficients for duration
   real sigma_intercept = exp(beta_sigma[1]);
   //post-sweep random effects
-  real beta_star = beta_mu[1] + mean(mu_ind) + mean(u_year_mean);
-  real tau_star = beta_tau[1] + mean(u_year_duration);
-  vector[N_ind_rep] mu_ind_star = mu_ind - mean(mu_ind);
-  vector[N_years] u_year_mean_star = u_year_mean - mean(u_year_mean);
-  vector[N_years] u_year_duration_star = u_year_duration - mean(u_year_duration);
+  real beta_star = beta_mu[1] + mean(mu_ind) + raneff_mu  * mean(u_year_mean);
+  real tau_star  = beta_tau[1]               + raneff_tau * mean(u_year_duration);
+  vector[N_ind_rep] mu_ind_star         = mu_ind - mean(mu_ind);
+  vector[N_years]   u_year_mean_star    = raneff_mu  * (u_year_mean - mean(u_year_mean));
+  vector[N_years]   u_year_duration_star = raneff_tau * (u_year_duration - mean(u_year_duration));
   real finite_sd = sd(mu_ind_star);
 
   if (N_pred_mu > 1){
@@ -152,11 +152,9 @@ generated quantities{
 
   mu_ind_out = mu_ind_star + beta_star;
 
-    mu = X_mu * beta_mu + u_year_mean[year_factor];
-//  print(mu);
-  tau = X_tau * beta_tau + u_year_duration[year_factor];
-//  print(tau);
-  sigma = exp(X_sigma * beta_sigma);//use log link for variance lin pred
+    mu    = X_mu  * beta_mu  + raneff_mu  * u_year_mean[year_factor];
+  tau   = X_tau * beta_tau + raneff_tau * u_year_duration[year_factor];
+  sigma = exp(X_sigma * beta_sigma);
 
 for (i in 1:N_old) {
 	if (is_replicated[individual[i]] == 1) {//longitudinal tobit-like likelihood (this only makes sense if within year recaptures contain at least one active moult score?!)

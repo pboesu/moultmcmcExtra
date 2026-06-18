@@ -22,6 +22,7 @@ moultmcmc_ranef(
   use_phi_approx = FALSE,
   active_moult_recaps_only = TRUE,
   same_sigma = FALSE,
+  raneff_components = c("start", "duration"),
   standata_only = FALSE,
   all_pars = FALSE,
   ...
@@ -61,6 +62,8 @@ moultmcmc_ranef(
 \item{active_moult_recaps_only}{logical flag whether to ignore repeated observations outside the active moult phase}
 
 \item{same_sigma}{logical flag, currently unused}
+
+\item{raneff_components}{character vector specifying which linear predictors receive annual random intercepts. Any combination of \code{"start"} (start date) and \code{"duration"}. Defaults to \code{c("start", "duration")} (both).}
 
 \item{standata_only}{logical; if TRUE, return the Stan data list (standata) without fitting the model.}
 

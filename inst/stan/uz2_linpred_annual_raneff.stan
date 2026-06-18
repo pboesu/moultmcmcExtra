@@ -21,6 +21,8 @@ data {
   // annual structure
   int year_factor[N_old+N_moult+N_new]; // year assignment per observation
   int N_years;                           // number of unique years
+  int<lower=0,upper=1> raneff_mu;        // include annual random effect on start date?
+  int<lower=0,upper=1> raneff_tau;       // include annual random effect on duration?
   // predictors (design matrices ordered: old, moult, new)
   int N_pred_mu;
   matrix[N_old+N_moult+N_new, N_pred_mu] X_mu;
@@ -43,10 +45,10 @@ parameters {
 transformed parameters {
   real sigma_intercept = exp(beta_sigma[1]);
   // post-sweep: marginalise intercepts over annual random effects
-  real beta_star = beta_mu[1] + mean(u_year_mean);
-  real tau_star  = beta_tau[1] + mean(u_year_duration);
-  vector[N_years] u_year_mean_star     = u_year_mean     - mean(u_year_mean);
-  vector[N_years] u_year_duration_star = u_year_duration - mean(u_year_duration);
+  real beta_star = beta_mu[1] + raneff_mu  * mean(u_year_mean);
+  real tau_star  = beta_tau[1] + raneff_tau * mean(u_year_duration);
+  vector[N_years] u_year_mean_star     = raneff_mu  * (u_year_mean - mean(u_year_mean));
+  vector[N_years] u_year_duration_star = raneff_tau * (u_year_duration - mean(u_year_duration));
 }
 
 model {
@@ -57,8 +59,8 @@ model {
   vector[N_old+N_moult+N_new] tau;
   vector[N_old+N_moult+N_new] sigma;
 
-  mu    = X_mu    * beta_mu    + u_year_mean[year_factor];
-  tau   = X_tau   * beta_tau   + u_year_duration[year_factor];
+  mu    = X_mu  * beta_mu  + raneff_mu  * u_year_mean[year_factor];
+  tau   = X_tau * beta_tau + raneff_tau * u_year_duration[year_factor];
   sigma = exp(X_sigma * beta_sigma);
 
   if (lumped == 0) {
@@ -134,8 +136,8 @@ generated quantities {
     vector[N_old+N_moult+N_new] tau;
     vector[N_old+N_moult+N_new] sigma;
 
-    mu    = X_mu    * beta_mu    + u_year_mean[year_factor];
-    tau   = X_tau   * beta_tau   + u_year_duration[year_factor];
+    mu    = X_mu  * beta_mu  + raneff_mu  * u_year_mean[year_factor];
+    tau   = X_tau * beta_tau + raneff_tau * u_year_duration[year_factor];
     sigma = exp(X_sigma * beta_sigma);
 
     if (lumped == 0) {
