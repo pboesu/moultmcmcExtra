@@ -19,8 +19,8 @@ data {
   vector<lower=0,upper=1>[N_moult] moult_indices;
   vector[N_new] new_dates;
   // annual structure
-  int year_factor[N_old+N_moult+N_new]; // year assignment per observation
   int N_years;                           // number of unique years
+  int<lower=1, upper=N_years> year_factor[N_old+N_moult+N_new]; // year assignment per observation
   int<lower=0,upper=1> raneff_mu;        // include annual random effect on start date?
   int<lower=0,upper=1> raneff_tau;       // include annual random effect on duration?
   // predictors (design matrices ordered: old, moult, new)

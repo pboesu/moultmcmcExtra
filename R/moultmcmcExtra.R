@@ -208,11 +208,13 @@ moultmcmc_ranef <- function(moult_column,
   #get name of relevant model object
   model_map <- list(
     "2" = list(linpred = "uz2_linpred_annual_raneff", recap = "uz2_recap_annual_raneff"),
-    "5" = list(linpred = "uz5_linpred_raneff",        recap = "uz5_recap_raneff")
+    "5" = list(recap = "uz5_recap_raneff")
   )
   recap_type <- if (is.null(id_column)) "linpred" else "recap"
+  if (type == 5 && recap_type == "linpred") {
+    stop("For type = 5, 'id_column' must be provided (no Type 5 linpred Stan model is included).")
+  }
   stan_model_name <- model_map[[as.character(type)]][[recap_type]]
-
   if (!all_pars && type == 2) {
     # uz2 annual raneff models output post-swept _out coefficients
     outpars <- gsub('beta_mu',  'beta_mu_out',  outpars)

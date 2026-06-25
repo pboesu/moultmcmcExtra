@@ -23,13 +23,13 @@ data {
   vector<lower=0,upper=1>[N_moult] moult_indices;
   vector[N_new] new_dates;
   // individual structure (full N_ind indexing)
-  int<lower=0> individual[N_moult+N_old+N_new];
-  int<lower=0> individual_first_index[N_ind];  // row of first occurrence of each individual
-  int<lower=0> is_replicated[N_ind];
-  int<lower=0> replicated_individuals[N_ind_rep]; // individual IDs that are replicated
+  int<lower=1, upper=N_ind> individual[N_moult+N_old+N_new];
+  int<lower=1, upper=N_moult+N_old+N_new> individual_first_index[N_ind];  // row of first occurrence of each individual
+  int<lower=0, upper=1> is_replicated[N_ind];
+  int<lower=1, upper=N_ind> replicated_individuals[N_ind_rep]; // individual IDs that are replicated
   // annual structure
-  int year_factor[N_old+N_moult+N_new]; // year assignment per observation
   int N_years;                           // number of unique years
+  int<lower=1, upper=N_years> year_factor[N_old+N_moult+N_new]; // year assignment per observation
   int<lower=0,upper=1> raneff_mu;        // include annual random effect on start date?
   int<lower=0,upper=1> raneff_tau;       // include annual random effect on duration?
   // predictors (design matrices ordered: old, moult, new)

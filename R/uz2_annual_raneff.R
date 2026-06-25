@@ -39,10 +39,12 @@
 uz2_recap_annual_raneff <- function(moult_index_column, date_column, id_column,
                                     start_formula = ~1, duration_formula = ~1, sigma_formula = ~1,
                                     year_factor_column,
-                                    raneff_components = c("start", "duration"),
-                                    flat_prior = FALSE, lumped = FALSE, use_phi_approx = FALSE,
-                                    beta_sd = 0,
-                                    data, init = "auto", log_lik = TRUE, standata_only = FALSE, ...) {
+                                     raneff_components = c("start", "duration"),
+                                     flat_prior = FALSE, lumped = FALSE, use_phi_approx = FALSE,
+                                     beta_sd = 0,
+                                     data, init = "auto", log_lik = TRUE, standata_only = FALSE, ...) {
+  raneff_components <- unique(raneff_components)
+  stopifnot(all(raneff_components %in% c("start", "duration")))
   stopifnot(all(data[[moult_index_column]] >= 0 & data[[moult_index_column]] <= 1))
   stopifnot(is.numeric(data[[date_column]]))
   stopifnot(is.factor(data[[id_column]]))
