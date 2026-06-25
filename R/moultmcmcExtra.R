@@ -213,13 +213,13 @@ moultmcmc_ranef <- function(moult_column,
   recap_type <- if (is.null(id_column)) "linpred" else "recap"
   stan_model_name <- model_map[[as.character(type)]][[recap_type]]
 
-  if (type == 2) {
+  if (!all_pars && type == 2) {
     # uz2 annual raneff models output post-swept _out coefficients
     outpars <- gsub('beta_mu',  'beta_mu_out',  outpars)
     outpars <- gsub('beta_tau', 'beta_tau_out', outpars)
     outpars <- c(outpars, 'beta_star')
   }
-  if (!is.null(id_column)) {
+  if (!all_pars && !is.null(id_column)) {
     if (type == 5) {
       outpars <- c(outpars, 'mu_ind_star', 'mu_ind_out', 'sigma_mu_ind')
       outpars <- gsub('beta_mu',  'beta_mu_out',  outpars)
