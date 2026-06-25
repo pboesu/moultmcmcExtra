@@ -18,6 +18,7 @@
 #' @param use_phi_approx logical flag whether to use stan's Phi_approx function to calculate the "old" likelihoods
 #' @param active_moult_recaps_only logical flag whether to ignore repeated observations outside the active moult phase
 #' @param same_sigma logical flag, currently unused
+#' @param raneff_components character vector specifying which linear predictors receive annual random intercepts. Any combination of `"start"` (start date) and `"duration"`. Defaults to `c("start", "duration")` (both).
 #' @param standata_only logical; if TRUE, return the Stan data list (standata) without fitting the model.
 #' @param all_pars logical; if TRUE, do not restrict `pars` in `rstan::sampling` (return all parameters).
 #' @param ... Arguments passed to `rstan::sampling` (e.g. iter, chains).
@@ -61,6 +62,7 @@ moultmcmc_ranef <- function(moult_column,
                         use_phi_approx = FALSE,
                         active_moult_recaps_only = TRUE,
                         same_sigma = FALSE,
+                        raneff_components = c("start", "duration"),
                         standata_only=FALSE,
                         all_pars=FALSE,
                         ...) {
@@ -76,7 +78,7 @@ moultmcmc_ranef <- function(moult_column,
   data <- model.frame(nlme::asOneFormula(start_formula, duration_formula, sigma_formula, implicit_vars_formula), data = data)
 
   #check data encoding is as expected
-  if(type != 5) stop("only type 5 models are currently implemented in moultmcmc_ranef")
+  if(!type %in% c(2, 5)) stop("only type 2 and 5 models are currently implemented in moultmcmc_ranef")
   stopifnot(is.factor(data[[year_factor_column]]))
   stopifnot(is.numeric(data[[date_column]]))
   if(type %in% c(2:5)) {
@@ -139,7 +141,9 @@ moultmcmc_ranef <- function(moult_column,
                    flat_prior = as.numeric(flat_prior),
                    beta_sd = beta_sd,
                    year_factor = as.integer(data[[year_factor_column]]),
-                   N_years = length(unique(data[[year_factor_column]])))
+                   N_years = length(unique(data[[year_factor_column]])),
+                   raneff_mu  = as.integer("start"    %in% raneff_components),
+                   raneff_tau = as.integer("duration" %in% raneff_components))
   # setup replication information
   if (!is.null(id_column)){
     stopifnot(is.factor(data[[id_column]]))
@@ -196,23 +200,35 @@ moultmcmc_ranef <- function(moult_column,
   #return standata object
   if(standata_only){return(standata)}
 
-  #include pointwise log_lik matrix  in output?
-  if(log_lik){
-    outpars <- c('beta_mu','beta_tau','beta_sigma', 'sigma_intercept', 'log_lik',
-                 'u_year_mean','u_year_mean_star', 'u_year_duration','u_year_duration_star', 'sd_year_mean', 'sd_year_duration')
-  } else {
-    outpars <- c('beta_mu','beta_tau','beta_sigma', 'sigma_intercept',
-                 'u_year_mean','u_year_mean_star', 'u_year_duration','u_year_duration_star', 'sd_year_mean', 'sd_year_duration')
-  }
+  outpars <- c('beta_mu', 'beta_tau', 'beta_sigma', 'sigma_intercept')
+  if ("start"    %in% raneff_components) outpars <- c(outpars, 'u_year_mean', 'u_year_mean_star', 'sd_year_mean')
+  if ("duration" %in% raneff_components) outpars <- c(outpars, 'u_year_duration', 'u_year_duration_star', 'sd_year_duration')
+  if (log_lik)                           outpars <- c(outpars, 'log_lik')
   if(all_pars){outpars = NA}
   #get name of relevant model object
-  if (is.null(id_column)){
-    stan_model_name <- paste0('uz',type,'_linpred_raneff')
-  } else {
-    stan_model_name <- paste0('uz',type,'_recap_raneff')
-    outpars <- c(outpars, 'mu_ind_star', 'mu_ind_out','sigma_mu_ind')
-    outpars <- gsub('beta_mu','beta_mu_out', outpars)
-    outpars <- gsub('beta_tau','beta_tau_out', outpars)
+  model_map <- list(
+    "2" = list(linpred = "uz2_linpred_annual_raneff", recap = "uz2_recap_annual_raneff"),
+    "5" = list(recap = "uz5_recap_raneff")
+  )
+  recap_type <- if (is.null(id_column)) "linpred" else "recap"
+  if (type == 5 && recap_type == "linpred") {
+    stop("For type = 5, 'id_column' must be provided (no Type 5 linpred Stan model is included).")
+  }
+  stan_model_name <- model_map[[as.character(type)]][[recap_type]]
+  if (!all_pars && type == 2) {
+    # uz2 annual raneff models output post-swept _out coefficients
+    outpars <- gsub('beta_mu',  'beta_mu_out',  outpars)
+    outpars <- gsub('beta_tau', 'beta_tau_out', outpars)
+    outpars <- c(outpars, 'beta_star')
+  }
+  if (!all_pars && !is.null(id_column)) {
+    if (type == 5) {
+      outpars <- c(outpars, 'mu_ind_star', 'mu_ind_out', 'sigma_mu_ind')
+      outpars <- gsub('beta_mu',  'beta_mu_out',  outpars)
+      outpars <- gsub('beta_tau', 'beta_tau_out', outpars)
+    } else if (type == 2) {
+      outpars <- c(outpars, 'mu_ind_star', 'sigma_mu_ind', 'finite_sd')
+    }
   }
 
   #guess initial values and sample
@@ -224,10 +240,16 @@ moultmcmc_ranef <- function(moult_column,
     sigma_mu_ind_start = jitter(20)
     initfunc <- function(chain_id = 1) {
       # cat("chain_id =", chain_id, "\n")
-      list(beta_mu = as.array(c(mu_start,rep(0, standata$N_pred_mu - 1))), #initialize intercept term from data, set inits for all other effects to 0
-           beta_tau = as.array(c(tau_start, rep(0, standata$N_pred_tau - 1))),
-           beta_sigma = as.array(c(log(sigma_start), rep(0, standata$N_pred_sigma - 1))),#NB on log link scale
-           sigma_mu_ind = sigma_mu_ind_start)
+      init_list <- list(
+        beta_mu    = as.array(c(mu_start,        rep(0, standata$N_pred_mu    - 1))),
+        beta_tau   = as.array(c(tau_start,        rep(0, standata$N_pred_tau   - 1))),
+        beta_sigma = as.array(c(log(sigma_start), rep(0, standata$N_pred_sigma - 1)))
+      )
+      if (!is.null(id_column)) {
+        init_list$sigma_mu_ind <- sigma_mu_ind_start
+        if (type == 2) init_list$mu_ind <- as.array(rep(0, standata$N_ind))
+      }
+      init_list
     }
     out <- rstan::sampling(stanmodels[[stan_model_name]], data = standata, init = initfunc, pars = outpars, ...)
   } else {

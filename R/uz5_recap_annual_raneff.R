@@ -13,11 +13,14 @@
 #' @param init Specification of initial values for all or some parameters. Can be the string "auto" for an automatic guess based on the data, or any of the permitted rstan options: the digit 0, the strings "0" or "random", or a function. See the detailed documentation for the init argument in ?rstan::stan.
 #' @param log_lik boolean retain pointwise log-likelihood in output? This enables model assessment and selection via the loo package. Defaults to true, can lead to very large output arrays if sample size is large.
 #' @param standata_only logical; if TRUE, return the Stan data list (standata) without fitting the model.
+#' @param raneff_components character vector specifying which linear predictors receive
+#'   annual random intercepts. Any combination of `"start"` (start date) and `"duration"`.
+#'   Defaults to `c("start", "duration")` (both).
 #' @param ... Arguments passed to `rstan::sampling` (e.g. iter, chains).
 #' @return When `standata_only = FALSE`, an object of class `stanfit` returned by `rstan::sampling`; otherwise the Stan data list (standata).
 #' @importFrom stats model.matrix sd
 #'
-uz5_linpred_recap_annual_raneff <- function(moult_index_column, date_column, id_column, start_formula = ~1, duration_formula = ~1, sigma_formula = ~1, year_factor_column, beta_sd = 0, data, init = "auto", log_lik = TRUE,standata_only=FALSE,...) {
+uz5_linpred_recap_annual_raneff <- function(moult_index_column, date_column, id_column, start_formula = ~1, duration_formula = ~1, sigma_formula = ~1, year_factor_column, raneff_components = c("start", "duration"), beta_sd = 0, data, init = "auto", log_lik = TRUE,standata_only=FALSE,...) {
   stopifnot(all(data[[moult_index_column]] >= 0 & data[[moult_index_column]] <= 1))
   #TODO: Assess the relative amount of old vs moult data, and especially fail/warn when there is no data of either category
   stopifnot(is.numeric(data[[date_column]]))
@@ -70,19 +73,16 @@ uz5_linpred_recap_annual_raneff <- function(moult_index_column, date_column, id_
                    N_pred_sigma = ncol(X_sigma),
                    beta_sd = beta_sd,
 				   year_factor = as.integer(data[[year_factor_column]]),
-                   N_years = length(unique(data[[year_factor_column]])))
+                   N_years = length(unique(data[[year_factor_column]])),
+                   raneff_mu  = as.integer("start"    %in% raneff_components),
+                   raneff_tau = as.integer("duration" %in% raneff_components))
   #return standata object
   if(standata_only){return(standata)}
-  #include pointwise log_lik matrix  in output?
-  if(log_lik){
-    outpars <- c('beta_mu_out','beta_tau_out','beta_tau','beta_sigma', 'sigma_intercept',
-'u_year_mean','u_year_mean_star', 'u_year_duration','u_year_duration_star', 'sd_year_mean', 'sd_year_duration',
-'sigma_mu_ind','beta_star','finite_sd', 'mu_ind_star', 'log_lik')
-  } else {
-    outpars <- c('beta_mu_out', 'beta_tau_out','beta_tau','beta_sigma', 'sigma_intercept',
-                 'u_year_mean','u_year_mean_star', 'u_year_duration','u_year_duration_star', 'sd_year_mean', 'sd_year_duration',
-'sigma_mu_ind','beta_star','finite_sd', 'mu_ind_star')
-  }
+  outpars <- c('beta_mu_out', 'beta_tau_out', 'beta_tau', 'beta_sigma', 'sigma_intercept',
+               'sigma_mu_ind', 'beta_star', 'finite_sd', 'mu_ind_star')
+  if ("start"    %in% raneff_components) outpars <- c(outpars, 'u_year_mean', 'u_year_mean_star', 'sd_year_mean')
+  if ("duration" %in% raneff_components) outpars <- c(outpars, 'u_year_duration', 'u_year_duration_star', 'sd_year_duration')
+  if (log_lik)                           outpars <- c(outpars, 'log_lik')
   #guess initial values
   if(init == "auto"){
     mu_start = mean(c(min(standata$moult_dates),max(standata$old_dates)))
