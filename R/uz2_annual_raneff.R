@@ -46,11 +46,12 @@ uz2_recap_annual_raneff <- function(moult_index_column, date_column, id_column,
   stopifnot(all(data[[moult_index_column]] >= 0 & data[[moult_index_column]] <= 1))
   stopifnot(is.numeric(data[[date_column]]))
   stopifnot(is.factor(data[[id_column]]))
+  stopifnot(is.factor(data[[year_factor_column]]))
   stopifnot(is.data.frame(data))
+  data <- droplevels(data)
 
   # order data by moult category: old (0), active moult (0,1), new (1)
   data <- data[order(data[[moult_index_column]]), ]
-
   # model matrices (over all N_old + N_moult + N_new rows)
   X_mu    <- model.matrix(start_formula,    data)
   X_tau   <- model.matrix(duration_formula, data)
@@ -195,11 +196,12 @@ uz2_linpred_annual_raneff <- function(moult_index_column, date_column,
                                       data, init = "auto", log_lik = TRUE, standata_only = FALSE, ...) {
   stopifnot(all(data[[moult_index_column]] >= 0 & data[[moult_index_column]] <= 1))
   stopifnot(is.numeric(data[[date_column]]))
+  stopifnot(is.factor(data[[year_factor_column]]))
   stopifnot(is.data.frame(data))
+  data <- droplevels(data)
 
   # order data by moult category: old (0), active moult (0,1), new (1)
   data <- data[order(data[[moult_index_column]]), ]
-
   X_mu    <- model.matrix(start_formula,    data)
   X_tau   <- model.matrix(duration_formula, data)
   X_sigma <- model.matrix(sigma_formula,    data)
