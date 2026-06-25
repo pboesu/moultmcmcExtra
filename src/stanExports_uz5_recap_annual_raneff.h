@@ -27,24 +27,24 @@ namespace model_uz5_recap_annual_raneff_namespace {
 using stan::model::model_base_crtp;
 using namespace stan::math;
 stan::math::profile_map profiles__;
-static constexpr std::array<const char*, 188> locations_array__ =
+static constexpr std::array<const char*, 190> locations_array__ =
   {" (found before start of program)",
-  " (in 'string', line 43, column 2 to column 28)",
-  " (in 'string', line 44, column 2 to column 30)",
-  " (in 'string', line 45, column 2 to column 34)",
-  " (in 'string', line 46, column 2 to column 23)",
-  " (in 'string', line 47, column 2 to column 30)",
-  " (in 'string', line 48, column 2 to column 34)",
-  " (in 'string', line 49, column 2 to column 31)",
-  " (in 'string', line 50, column 2 to column 35)",
-  " (in 'string', line 51, column 2 to column 29)",
-  " (in 'string', line 54, column 2 to column 44)",
-  " (in 'string', line 56, column 2 to column 89)",
-  " (in 'string', line 57, column 2 to column 54)",
-  " (in 'string', line 58, column 2 to column 104)",
-  " (in 'string', line 59, column 2 to column 69)",
-  " (in 'string', line 60, column 2 to column 81)",
-  " (in 'string', line 61, column 2 to column 35)",
+  " (in 'string', line 45, column 2 to column 28)",
+  " (in 'string', line 46, column 2 to column 30)",
+  " (in 'string', line 47, column 2 to column 34)",
+  " (in 'string', line 48, column 2 to column 23)",
+  " (in 'string', line 49, column 2 to column 30)",
+  " (in 'string', line 50, column 2 to column 34)",
+  " (in 'string', line 51, column 2 to column 31)",
+  " (in 'string', line 52, column 2 to column 35)",
+  " (in 'string', line 53, column 2 to column 29)",
+  " (in 'string', line 56, column 2 to column 44)",
+  " (in 'string', line 58, column 2 to column 102)",
+  " (in 'string', line 59, column 2 to column 107)",
+  " (in 'string', line 60, column 2 to column 112)",
+  " (in 'string', line 61, column 2 to column 89)",
+  " (in 'string', line 62, column 2 to column 98)",
+  " (in 'string', line 63, column 2 to column 35)",
   " (in 'string', line 140, column 2 to column 19)",
   " (in 'string', line 141, column 2 to column 18)",
   " (in 'string', line 142, column 2 to column 21)",
@@ -65,45 +65,45 @@ static constexpr std::array<const char*, 188> locations_array__ =
   " (in 'string', line 156, column 4 to column 63)",
   " (in 'string', line 155, column 21 to line 157, column 3)",
   " (in 'string', line 155, column 2 to line 159, column 3)",
-  " (in 'string', line 160, column 2 to column 49)",
-  " (in 'string', line 162, column 2 to column 56)",
-  " (in 'string', line 164, column 2 to column 36)",
-  " (in 'string', line 170, column 4 to column 52)",
-  " (in 'string', line 171, column 4 to column 58)",
-  " (in 'string', line 172, column 4 to column 41)",
-  " (in 'string', line 169, column 8 to line 173, column 2)",
-  " (in 'string', line 167, column 3 to column 81)",
-  " (in 'string', line 168, column 3 to column 26)",
-  " (in 'string', line 166, column 40 to line 169, column 2)",
-  " (in 'string', line 166, column 1 to line 173, column 2)",
-  " (in 'string', line 165, column 19 to line 174, column 1)",
-  " (in 'string', line 165, column 0 to line 174, column 1)",
-  " (in 'string', line 180, column 3 to column 83)",
-  " (in 'string', line 181, column 3 to column 130)",
-  " (in 'string', line 182, column 3 to column 40)",
-  " (in 'string', line 179, column 9 to line 183, column 3)",
-  " (in 'string', line 177, column 3 to column 136)",
-  " (in 'string', line 178, column 3 to column 25)",
-  " (in 'string', line 176, column 49 to line 179, column 3)",
-  " (in 'string', line 176, column 2 to line 183, column 3)",
-  " (in 'string', line 175, column 20 to line 184, column 1)",
-  " (in 'string', line 175, column 0 to line 184, column 1)",
-  " (in 'string', line 65, column 9 to column 14)",
-  " (in 'string', line 65, column 2 to column 19)",
-  " (in 'string', line 66, column 9 to column 14)",
-  " (in 'string', line 66, column 2 to column 18)",
-  " (in 'string', line 67, column 9 to column 16)",
-  " (in 'string', line 67, column 2 to column 21)",
-  " (in 'string', line 68, column 9 to column 16)",
-  " (in 'string', line 68, column 2 to column 20)",
-  " (in 'string', line 69, column 9 to column 22)",
-  " (in 'string', line 69, column 2 to column 27)",
-  " (in 'string', line 70, column 9 to column 22)",
-  " (in 'string', line 70, column 2 to column 28)",
+  " (in 'string', line 160, column 2 to column 67)",
+  " (in 'string', line 161, column 2 to column 71)",
+  " (in 'string', line 162, column 2 to column 36)",
+  " (in 'string', line 168, column 4 to column 52)",
+  " (in 'string', line 169, column 4 to column 58)",
+  " (in 'string', line 170, column 4 to column 41)",
+  " (in 'string', line 167, column 8 to line 171, column 2)",
+  " (in 'string', line 165, column 3 to column 81)",
+  " (in 'string', line 166, column 3 to column 26)",
+  " (in 'string', line 164, column 40 to line 167, column 2)",
+  " (in 'string', line 164, column 1 to line 171, column 2)",
+  " (in 'string', line 163, column 19 to line 172, column 1)",
+  " (in 'string', line 163, column 0 to line 172, column 1)",
+  " (in 'string', line 178, column 3 to column 83)",
+  " (in 'string', line 179, column 3 to column 130)",
+  " (in 'string', line 180, column 3 to column 40)",
+  " (in 'string', line 177, column 9 to line 181, column 3)",
+  " (in 'string', line 175, column 3 to column 136)",
+  " (in 'string', line 176, column 3 to column 25)",
+  " (in 'string', line 174, column 49 to line 177, column 3)",
+  " (in 'string', line 174, column 2 to line 181, column 3)",
+  " (in 'string', line 173, column 20 to line 182, column 1)",
+  " (in 'string', line 173, column 0 to line 182, column 1)",
+  " (in 'string', line 67, column 9 to column 14)",
+  " (in 'string', line 67, column 2 to column 19)",
+  " (in 'string', line 68, column 9 to column 14)",
+  " (in 'string', line 68, column 2 to column 18)",
+  " (in 'string', line 69, column 9 to column 16)",
+  " (in 'string', line 69, column 2 to column 21)",
+  " (in 'string', line 70, column 9 to column 16)",
+  " (in 'string', line 70, column 2 to column 20)",
   " (in 'string', line 71, column 9 to column 22)",
-  " (in 'string', line 71, column 2 to column 30)",
-  " (in 'string', line 72, column 2 to column 49)",
-  " (in 'string', line 74, column 2 to column 56)",
+  " (in 'string', line 71, column 2 to column 27)",
+  " (in 'string', line 72, column 9 to column 22)",
+  " (in 'string', line 72, column 2 to column 28)",
+  " (in 'string', line 73, column 9 to column 22)",
+  " (in 'string', line 73, column 2 to column 30)",
+  " (in 'string', line 74, column 2 to column 67)",
+  " (in 'string', line 75, column 2 to column 71)",
   " (in 'string', line 76, column 2 to column 36)",
   " (in 'string', line 81, column 4 to column 52)",
   " (in 'string', line 82, column 4 to column 58)",
@@ -197,15 +197,17 @@ static constexpr std::array<const char*, 188> locations_array__ =
   " (in 'string', line 35, column 18 to column 31)",
   " (in 'string', line 35, column 2 to column 33)",
   " (in 'string', line 36, column 2 to column 14)",
-  " (in 'string', line 43, column 9 to column 18)",
-  " (in 'string', line 44, column 9 to column 19)",
-  " (in 'string', line 45, column 9 to column 21)",
-  " (in 'string', line 46, column 9 to column 14)",
-  " (in 'string', line 47, column 9 to column 16)",
-  " (in 'string', line 48, column 9 to column 16)",
-  " (in 'string', line 58, column 9 to column 18)",
-  " (in 'string', line 59, column 9 to column 16)",
-  " (in 'string', line 60, column 9 to column 16)",
+  " (in 'string', line 37, column 2 to column 33)",
+  " (in 'string', line 38, column 2 to column 34)",
+  " (in 'string', line 45, column 9 to column 18)",
+  " (in 'string', line 46, column 9 to column 19)",
+  " (in 'string', line 47, column 9 to column 21)",
+  " (in 'string', line 48, column 9 to column 14)",
+  " (in 'string', line 49, column 9 to column 16)",
+  " (in 'string', line 50, column 9 to column 16)",
+  " (in 'string', line 60, column 9 to column 18)",
+  " (in 'string', line 61, column 9 to column 16)",
+  " (in 'string', line 62, column 9 to column 16)",
   " (in 'string', line 140, column 9 to column 14)",
   " (in 'string', line 141, column 9 to column 14)",
   " (in 'string', line 142, column 9 to column 16)",
@@ -246,6 +248,8 @@ private:
   double beta_sd;
   std::vector<int> year_factor;
   int N_years;
+  int raneff_mu;
+  int raneff_tau;
   int mu_1dim__;
   int tau_1dim__;
   int sigma_1dim__;
@@ -674,71 +678,93 @@ public:
       current_statement__ = 168;
       N_years = context__.vals_i("N_years")[(1 - 1)];
       current_statement__ = 169;
+      context__.validate_dims("data initialization", "raneff_mu", "int",
+        std::vector<size_t>{});
+      raneff_mu = std::numeric_limits<int>::min();
+      current_statement__ = 169;
+      raneff_mu = context__.vals_i("raneff_mu")[(1 - 1)];
+      current_statement__ = 169;
+      stan::math::check_greater_or_equal(function__, "raneff_mu", raneff_mu,
+        0);
+      current_statement__ = 169;
+      stan::math::check_less_or_equal(function__, "raneff_mu", raneff_mu, 1);
+      current_statement__ = 170;
+      context__.validate_dims("data initialization", "raneff_tau", "int",
+        std::vector<size_t>{});
+      raneff_tau = std::numeric_limits<int>::min();
+      current_statement__ = 170;
+      raneff_tau = context__.vals_i("raneff_tau")[(1 - 1)];
+      current_statement__ = 170;
+      stan::math::check_greater_or_equal(function__, "raneff_tau",
+        raneff_tau, 0);
+      current_statement__ = 170;
+      stan::math::check_less_or_equal(function__, "raneff_tau", raneff_tau, 1);
+      current_statement__ = 171;
       stan::math::validate_non_negative_index("beta_mu", "N_pred_mu",
         N_pred_mu);
-      current_statement__ = 170;
+      current_statement__ = 172;
       stan::math::validate_non_negative_index("beta_tau", "N_pred_tau",
         N_pred_tau);
-      current_statement__ = 171;
+      current_statement__ = 173;
       stan::math::validate_non_negative_index("beta_sigma", "N_pred_sigma",
         N_pred_sigma);
-      current_statement__ = 172;
+      current_statement__ = 174;
       stan::math::validate_non_negative_index("mu_ind", "N_ind", N_ind);
-      current_statement__ = 173;
+      current_statement__ = 175;
       stan::math::validate_non_negative_index("u_year_mean", "N_years",
         N_years);
-      current_statement__ = 174;
+      current_statement__ = 176;
       stan::math::validate_non_negative_index("u_year_duration", "N_years",
         N_years);
-      current_statement__ = 175;
+      current_statement__ = 177;
       stan::math::validate_non_negative_index("mu_ind_star", "N_ind_rep",
         N_ind_rep);
-      current_statement__ = 176;
+      current_statement__ = 178;
       stan::math::validate_non_negative_index("u_year_mean_star", "N_years",
         N_years);
-      current_statement__ = 177;
+      current_statement__ = 179;
       stan::math::validate_non_negative_index("u_year_duration_star",
         "N_years", N_years);
-      current_statement__ = 178;
-      stan::math::validate_non_negative_index("Rt", "N_old", N_old);
-      current_statement__ = 179;
-      stan::math::validate_non_negative_index("P", "N_old", N_old);
       current_statement__ = 180;
-      stan::math::validate_non_negative_index("Ru", "N_moult", N_moult);
+      stan::math::validate_non_negative_index("Rt", "N_old", N_old);
       current_statement__ = 181;
+      stan::math::validate_non_negative_index("P", "N_old", N_old);
+      current_statement__ = 182;
+      stan::math::validate_non_negative_index("Ru", "N_moult", N_moult);
+      current_statement__ = 183;
       stan::math::validate_non_negative_index("q", "N_moult", N_moult);
-      current_statement__ = 182;
+      current_statement__ = 184;
       mu_1dim__ = std::numeric_limits<int>::min();
-      current_statement__ = 182;
+      current_statement__ = 184;
       mu_1dim__ = (N_old + N_moult);
-      current_statement__ = 182;
+      current_statement__ = 184;
       stan::math::validate_non_negative_index("mu", "N_old + N_moult",
         mu_1dim__);
-      current_statement__ = 183;
+      current_statement__ = 185;
       tau_1dim__ = std::numeric_limits<int>::min();
-      current_statement__ = 183;
+      current_statement__ = 185;
       tau_1dim__ = (N_old + N_moult);
-      current_statement__ = 183;
+      current_statement__ = 185;
       stan::math::validate_non_negative_index("tau", "N_old + N_moult",
         tau_1dim__);
-      current_statement__ = 184;
+      current_statement__ = 186;
       sigma_1dim__ = std::numeric_limits<int>::min();
-      current_statement__ = 184;
+      current_statement__ = 186;
       sigma_1dim__ = (N_old + N_moult);
-      current_statement__ = 184;
+      current_statement__ = 186;
       stan::math::validate_non_negative_index("sigma", "N_old + N_moult",
         sigma_1dim__);
-      current_statement__ = 185;
+      current_statement__ = 187;
       log_lik_1dim__ = std::numeric_limits<int>::min();
-      current_statement__ = 185;
+      current_statement__ = 187;
       log_lik_1dim__ = (N_old + N_moult);
-      current_statement__ = 185;
+      current_statement__ = 187;
       stan::math::validate_non_negative_index("log_lik", "N_old + N_moult",
         log_lik_1dim__);
-      current_statement__ = 186;
+      current_statement__ = 188;
       stan::math::validate_non_negative_index("beta_mu_out", "N_pred_mu",
         N_pred_mu);
-      current_statement__ = 187;
+      current_statement__ = 189;
       stan::math::validate_non_negative_index("beta_tau_out", "N_pred_tau",
         N_pred_tau);
     } catch (const std::exception& e) {
@@ -832,12 +858,12 @@ public:
         stan::math::mean(
           stan::model::rvalue(mu_ind, "mu_ind",
             stan::model::index_multi(replicated_individuals))))
-        + stan::math::mean(u_year_mean));
+        + (raneff_mu * stan::math::mean(u_year_mean)));
       local_scalar_t__ tau_star = DUMMY_VAR__;
       current_statement__ = 12;
       tau_star = (stan::model::rvalue(beta_tau, "beta_tau",
                     stan::model::index_uni(1))
-        + stan::math::mean(u_year_duration));
+        + (raneff_tau * stan::math::mean(u_year_duration)));
       Eigen::Matrix<local_scalar_t__,-1,1> mu_ind_star =
         Eigen::Matrix<local_scalar_t__,-1,1>::Constant(N_ind_rep,
           DUMMY_VAR__);
@@ -854,14 +880,16 @@ public:
         Eigen::Matrix<local_scalar_t__,-1,1>::Constant(N_years, DUMMY_VAR__);
       current_statement__ = 14;
       stan::model::assign(u_year_mean_star,
-        stan::math::subtract(u_year_mean, stan::math::mean(u_year_mean)),
+        stan::math::multiply(raneff_mu,
+          stan::math::subtract(u_year_mean, stan::math::mean(u_year_mean))),
         "assigning variable u_year_mean_star");
       Eigen::Matrix<local_scalar_t__,-1,1> u_year_duration_star =
         Eigen::Matrix<local_scalar_t__,-1,1>::Constant(N_years, DUMMY_VAR__);
       current_statement__ = 15;
       stan::model::assign(u_year_duration_star,
-        stan::math::subtract(u_year_duration,
-          stan::math::mean(u_year_duration)),
+        stan::math::multiply(raneff_tau,
+          stan::math::subtract(u_year_duration,
+            stan::math::mean(u_year_duration))),
         "assigning variable u_year_duration_star");
       local_scalar_t__ finite_sd = DUMMY_VAR__;
       current_statement__ = 16;
@@ -906,14 +934,16 @@ public:
         current_statement__ = 74;
         stan::model::assign(mu,
           stan::math::add(stan::math::multiply(X_mu, beta_mu),
-            stan::model::rvalue(u_year_mean, "u_year_mean",
-              stan::model::index_multi(year_factor))),
+            stan::math::multiply(raneff_mu,
+              stan::model::rvalue(u_year_mean, "u_year_mean",
+                stan::model::index_multi(year_factor)))),
           "assigning variable mu");
         current_statement__ = 75;
         stan::model::assign(tau,
           stan::math::add(stan::math::multiply(X_tau, beta_tau),
-            stan::model::rvalue(u_year_duration, "u_year_duration",
-              stan::model::index_multi(year_factor))),
+            stan::math::multiply(raneff_tau,
+              stan::model::rvalue(u_year_duration, "u_year_duration",
+                stan::model::index_multi(year_factor)))),
           "assigning variable tau");
         current_statement__ = 76;
         stan::model::assign(sigma,
@@ -1257,11 +1287,11 @@ public:
         stan::math::mean(
           stan::model::rvalue(mu_ind, "mu_ind",
             stan::model::index_multi(replicated_individuals))))
-        + stan::math::mean(u_year_mean));
+        + (raneff_mu * stan::math::mean(u_year_mean)));
       current_statement__ = 12;
       tau_star = (stan::model::rvalue(beta_tau, "beta_tau",
                     stan::model::index_uni(1))
-        + stan::math::mean(u_year_duration));
+        + (raneff_tau * stan::math::mean(u_year_duration)));
       current_statement__ = 13;
       stan::model::assign(mu_ind_star,
         stan::math::subtract(
@@ -1273,12 +1303,14 @@ public:
         "assigning variable mu_ind_star");
       current_statement__ = 14;
       stan::model::assign(u_year_mean_star,
-        stan::math::subtract(u_year_mean, stan::math::mean(u_year_mean)),
+        stan::math::multiply(raneff_mu,
+          stan::math::subtract(u_year_mean, stan::math::mean(u_year_mean))),
         "assigning variable u_year_mean_star");
       current_statement__ = 15;
       stan::model::assign(u_year_duration_star,
-        stan::math::subtract(u_year_duration,
-          stan::math::mean(u_year_duration)),
+        stan::math::multiply(raneff_tau,
+          stan::math::subtract(u_year_duration,
+            stan::math::mean(u_year_duration))),
         "assigning variable u_year_duration_star");
       current_statement__ = 16;
       finite_sd = stan::math::sd(mu_ind_star);
@@ -1353,13 +1385,17 @@ public:
       current_statement__ = 37;
       stan::model::assign(mu,
         stan::math::add(stan::math::multiply(X_mu, beta_mu),
-          stan::model::rvalue(u_year_mean, "u_year_mean",
-            stan::model::index_multi(year_factor))), "assigning variable mu");
+          stan::math::multiply(raneff_mu,
+            stan::model::rvalue(u_year_mean, "u_year_mean",
+              stan::model::index_multi(year_factor)))),
+        "assigning variable mu");
       current_statement__ = 38;
       stan::model::assign(tau,
         stan::math::add(stan::math::multiply(X_tau, beta_tau),
-          stan::model::rvalue(u_year_duration, "u_year_duration",
-            stan::model::index_multi(year_factor))), "assigning variable tau");
+          stan::math::multiply(raneff_tau,
+            stan::model::rvalue(u_year_duration, "u_year_duration",
+              stan::model::index_multi(year_factor)))),
+        "assigning variable tau");
       current_statement__ = 39;
       stan::model::assign(sigma,
         stan::math::exp(stan::math::multiply(X_sigma, beta_sigma)),
