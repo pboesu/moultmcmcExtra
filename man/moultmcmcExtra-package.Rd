@@ -11,10 +11,5 @@ Add-on functionality for moultmcmc
 \author{
 \strong{Maintainer}: Philipp Boersch-Supan \email{pboesu@gmail.com} (\href{https://orcid.org/0000-0001-6723-6833}{ORCID})
 
-Authors:
-\itemize{
-  \item Philipp Boersch-Supan \email{pboesu@gmail.com} (\href{https://orcid.org/0000-0001-6723-6833}{ORCID})
-}
-
 }
 \keyword{internal}
