@@ -2,12 +2,12 @@
 
 #include <Rcpp.h>
 using namespace Rcpp ;
-#include "stanExports_uz2_linpred_annual_raneff.h"
+#include "stanExports_uz2_recap_annual_ranef.h"
 
-RCPP_MODULE(stan_fit4uz2_linpred_annual_raneff_mod) {
+RCPP_MODULE(stan_fit4uz2_recap_annual_ranef_mod) {
 
 
-    class_<rstan::stan_fit<stan_model, boost::ecuyer1988> >("rstantools_model_uz2_linpred_annual_raneff")
+    class_<rstan::stan_fit<stan_model, boost::ecuyer1988> >("rstantools_model_uz2_recap_annual_ranef")
 
     .constructor<SEXP,SEXP,SEXP>()
 

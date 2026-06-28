@@ -4,7 +4,7 @@
 #' @param moult_column the name the column in `data` containing moult indices, i.e. a numeric vector of (linearized) moult scores in \[0,1\] (0 = old plumage, 1 = new plumage; for model types 1-5),   numerical moult codes (1 = old plumage, 2 = moulting, 3 = new plumage; for model type 1), or a mixed column created by \code{\link{consolidate_moult_records}} for model type 12.
 #' @param date_column the name the column in `data` containing sampling dates, encoded as days since an arbitrary reference date, i.e. a numeric vector
 #' @param id_column (optional) factor identifier. Usually a season-individual combination to encode within-season recaptures, defaults to NULL. When provided moultmcmc will attempt to fit the relevant recaptures model.
-#' @param year_factor_column the name of a factor column in data that contains year_factor values
+#' @param ranef_factor_column the name of a factor column in data that contains year_factor values
 #' @param start_formula model formula for start date
 #' @param duration_formula model formula for duration
 #' @param sigma_formula model formula for start date sigma
@@ -18,7 +18,7 @@
 #' @param use_phi_approx logical flag whether to use stan's Phi_approx function to calculate the "old" likelihoods
 #' @param active_moult_recaps_only logical flag whether to ignore repeated observations outside the active moult phase
 #' @param same_sigma logical flag, currently unused
-#' @param raneff_components character vector specifying which linear predictors receive annual random intercepts. Any combination of `"start"` (start date) and `"duration"`. Defaults to `c("start", "duration")` (both).
+#' @param ranef_components character vector specifying which linear predictors receive annual random intercepts. Any combination of `"start"` (start date) and `"duration"`. Defaults to `c("start", "duration")` (both).
 #' @param standata_only logical; if TRUE, return the Stan data list (standata) without fitting the model.
 #' @param all_pars logical; if TRUE, do not restrict `pars` in `rstan::sampling` (return all parameters).
 #' @param ... Arguments passed to `rstan::sampling` (e.g. iter, chains).
@@ -51,7 +51,7 @@ moultmcmc_ranef <- function(moult_column,
                         start_formula = ~1,
                         duration_formula = ~1,
                         sigma_formula = ~1,
-                        year_factor_column,
+                        ranef_factor_column,
                         type = 5,
                         lump_non_moult = FALSE,
                         data,
@@ -62,7 +62,7 @@ moultmcmc_ranef <- function(moult_column,
                         use_phi_approx = FALSE,
                         active_moult_recaps_only = TRUE,
                         same_sigma = FALSE,
-                        raneff_components = c("start", "duration"),
+                        ranef_components = c("start", "duration"),
                         standata_only=FALSE,
                         all_pars=FALSE,
                         ...) {
@@ -71,15 +71,15 @@ moultmcmc_ranef <- function(moult_column,
   #prepare model.frame and handle missing values
   #subset data to relevant columns
   if (is.null(id_column)){
-    implicit_vars_formula <- as.formula(paste(moult_column, '~ ', date_column, '+', year_factor_column))
+    implicit_vars_formula <- as.formula(paste(moult_column, '~ ', date_column, '+', ranef_factor_column))
   } else {
-    implicit_vars_formula <- as.formula(paste(moult_column, '~ ', date_column, '+', id_column, '+', year_factor_column ))
+    implicit_vars_formula <- as.formula(paste(moult_column, '~ ', date_column, '+', id_column, '+', ranef_factor_column ))
   }
   data <- model.frame(nlme::asOneFormula(start_formula, duration_formula, sigma_formula, implicit_vars_formula), data = data)
 
   #check data encoding is as expected
   if(!type %in% c(2, 5)) stop("only type 2 and 5 models are currently implemented in moultmcmc_ranef")
-  stopifnot(is.factor(data[[year_factor_column]]))
+  stopifnot(is.factor(data[[ranef_factor_column]]))
   stopifnot(is.numeric(data[[date_column]]))
   if(type %in% c(2:5)) {
     stopifnot(all(data[[moult_column]] >= 0 & data[[moult_column]] <= 1))
@@ -140,10 +140,10 @@ moultmcmc_ranef <- function(moult_column,
                    same_sigma = as.numeric(same_sigma),
                    flat_prior = as.numeric(flat_prior),
                    beta_sd = beta_sd,
-                   year_factor = as.integer(data[[year_factor_column]]),
-                   N_years = length(unique(data[[year_factor_column]])),
-                   raneff_mu  = as.integer("start"    %in% raneff_components),
-                   raneff_tau = as.integer("duration" %in% raneff_components))
+                   year_factor = as.integer(data[[ranef_factor_column]]),
+                   N_years = length(unique(data[[ranef_factor_column]])),
+                   ranef_mu  = as.integer("start"    %in% ranef_components),
+                   ranef_tau = as.integer("duration" %in% ranef_components))
   # setup replication information
   if (!is.null(id_column)){
     stopifnot(is.factor(data[[id_column]]))
@@ -201,14 +201,14 @@ moultmcmc_ranef <- function(moult_column,
   if(standata_only){return(standata)}
 
   outpars <- c('beta_mu', 'beta_tau', 'beta_sigma', 'sigma_intercept')
-  if ("start"    %in% raneff_components) outpars <- c(outpars, 'u_year_mean', 'u_year_mean_star', 'sd_year_mean')
-  if ("duration" %in% raneff_components) outpars <- c(outpars, 'u_year_duration', 'u_year_duration_star', 'sd_year_duration')
+  if ("start"    %in% ranef_components) outpars <- c(outpars, 'u_year_mean', 'u_year_mean_star', 'sd_year_mean')
+  if ("duration" %in% ranef_components) outpars <- c(outpars, 'u_year_duration', 'u_year_duration_star', 'sd_year_duration')
   if (log_lik)                           outpars <- c(outpars, 'log_lik')
   if(all_pars){outpars = NA}
   #get name of relevant model object
   model_map <- list(
-    "2" = list(linpred = "uz2_linpred_annual_raneff", recap = "uz2_recap_annual_raneff"),
-    "5" = list(recap = "uz5_recap_raneff")
+    "2" = list(linpred = "uz2_linpred_annual_ranef", recap = "uz2_recap_annual_ranef"),
+    "5" = list(recap = "uz5_recap_ranef")
   )
   recap_type <- if (is.null(id_column)) "linpred" else "recap"
   if (type == 5 && recap_type == "linpred") {
@@ -216,7 +216,7 @@ moultmcmc_ranef <- function(moult_column,
   }
   stan_model_name <- model_map[[as.character(type)]][[recap_type]]
   if (!all_pars && type == 2) {
-    # uz2 annual raneff models output post-swept _out coefficients
+    # uz2 annual ranef models output post-swept _out coefficients
     outpars <- gsub('beta_mu',  'beta_mu_out',  outpars)
     outpars <- gsub('beta_tau', 'beta_tau_out', outpars)
     outpars <- c(outpars, 'beta_star')
@@ -268,7 +268,7 @@ moultmcmc_ranef <- function(moult_column,
   out_struc$terms$date_column <- date_column
   out_struc$terms$moult_index_column <- moult_column
   out_struc$terms$moult_cat_column <- NA
-  out_struc$terms$year_column <- year_factor_column
+  out_struc$terms$year_column <- ranef_factor_column
   out_struc$terms$id_column <- id_column
   out_struc$terms$start_formula <- start_formula
   out_struc$terms$duration_formula <- duration_formula

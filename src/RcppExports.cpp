@@ -12,16 +12,16 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
 
-RcppExport SEXP _rcpp_module_boot_stan_fit4uz2_linpred_annual_raneff_mod();
-RcppExport SEXP _rcpp_module_boot_stan_fit4uz2_recap_annual_raneff_mod();
-RcppExport SEXP _rcpp_module_boot_stan_fit4uz5_recap_annual_raneff_mod();
-RcppExport SEXP _rcpp_module_boot_stan_fit4uz5_recap_raneff_mod();
+RcppExport SEXP _rcpp_module_boot_stan_fit4uz2_linpred_annual_ranef_mod();
+RcppExport SEXP _rcpp_module_boot_stan_fit4uz2_recap_annual_ranef_mod();
+RcppExport SEXP _rcpp_module_boot_stan_fit4uz5_recap_annual_ranef_mod();
+RcppExport SEXP _rcpp_module_boot_stan_fit4uz5_recap_ranef_mod();
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_rcpp_module_boot_stan_fit4uz2_linpred_annual_raneff_mod", (DL_FUNC) &_rcpp_module_boot_stan_fit4uz2_linpred_annual_raneff_mod, 0},
-    {"_rcpp_module_boot_stan_fit4uz2_recap_annual_raneff_mod", (DL_FUNC) &_rcpp_module_boot_stan_fit4uz2_recap_annual_raneff_mod, 0},
-    {"_rcpp_module_boot_stan_fit4uz5_recap_annual_raneff_mod", (DL_FUNC) &_rcpp_module_boot_stan_fit4uz5_recap_annual_raneff_mod, 0},
-    {"_rcpp_module_boot_stan_fit4uz5_recap_raneff_mod", (DL_FUNC) &_rcpp_module_boot_stan_fit4uz5_recap_raneff_mod, 0},
+    {"_rcpp_module_boot_stan_fit4uz2_linpred_annual_ranef_mod", (DL_FUNC) &_rcpp_module_boot_stan_fit4uz2_linpred_annual_ranef_mod, 0},
+    {"_rcpp_module_boot_stan_fit4uz2_recap_annual_ranef_mod", (DL_FUNC) &_rcpp_module_boot_stan_fit4uz2_recap_annual_ranef_mod, 0},
+    {"_rcpp_module_boot_stan_fit4uz5_recap_annual_ranef_mod", (DL_FUNC) &_rcpp_module_boot_stan_fit4uz5_recap_annual_ranef_mod, 0},
+    {"_rcpp_module_boot_stan_fit4uz5_recap_ranef_mod", (DL_FUNC) &_rcpp_module_boot_stan_fit4uz5_recap_ranef_mod, 0},
     {NULL, NULL, 0}
 };
 

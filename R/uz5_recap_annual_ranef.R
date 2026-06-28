@@ -7,20 +7,20 @@
 #' @param start_formula model formula for start date
 #' @param duration_formula model formula for duration
 #' @param sigma_formula model formula for start date sigma
-#' @param year_factor_column the name of a factor column in data that contains year_factor values
+#' @param ranef_factor_column the name of a factor column in data that contains year_factor values
 #' @param beta_sd use zero-centred normal priors for regression coefficients other than intercepts? If <= 0 the stan default of improper flat priors is used.
 #' @param data Input data frame
 #' @param init Specification of initial values for all or some parameters. Can be the string "auto" for an automatic guess based on the data, or any of the permitted rstan options: the digit 0, the strings "0" or "random", or a function. See the detailed documentation for the init argument in ?rstan::stan.
 #' @param log_lik boolean retain pointwise log-likelihood in output? This enables model assessment and selection via the loo package. Defaults to true, can lead to very large output arrays if sample size is large.
 #' @param standata_only logical; if TRUE, return the Stan data list (standata) without fitting the model.
-#' @param raneff_components character vector specifying which linear predictors receive
+#' @param ranef_components character vector specifying which linear predictors receive
 #'   annual random intercepts. Any combination of `"start"` (start date) and `"duration"`.
 #'   Defaults to `c("start", "duration")` (both).
 #' @param ... Arguments passed to `rstan::sampling` (e.g. iter, chains).
 #' @return When `standata_only = FALSE`, an object of class `stanfit` returned by `rstan::sampling`; otherwise the Stan data list (standata).
 #' @importFrom stats model.matrix sd
 #'
-uz5_linpred_recap_annual_raneff <- function(moult_index_column, date_column, id_column, start_formula = ~1, duration_formula = ~1, sigma_formula = ~1, year_factor_column, raneff_components = c("start", "duration"), beta_sd = 0, data, init = "auto", log_lik = TRUE,standata_only=FALSE,...) {
+uz5_linpred_recap_annual_ranef <- function(moult_index_column, date_column, id_column, start_formula = ~1, duration_formula = ~1, sigma_formula = ~1, ranef_factor_column, ranef_components = c("start", "duration"), beta_sd = 0, data, init = "auto", log_lik = TRUE,standata_only=FALSE,...) {
   stopifnot(all(data[[moult_index_column]] >= 0 & data[[moult_index_column]] <= 1))
   #TODO: Assess the relative amount of old vs moult data, and especially fail/warn when there is no data of either category
   stopifnot(is.numeric(data[[date_column]]))
@@ -72,16 +72,16 @@ uz5_linpred_recap_annual_raneff <- function(moult_index_column, date_column, id_
                    X_sigma = X_sigma,
                    N_pred_sigma = ncol(X_sigma),
                    beta_sd = beta_sd,
-				   year_factor = as.integer(data[[year_factor_column]]),
-                   N_years = length(unique(data[[year_factor_column]])),
-                   raneff_mu  = as.integer("start"    %in% raneff_components),
-                   raneff_tau = as.integer("duration" %in% raneff_components))
+				   year_factor = as.integer(data[[ranef_factor_column]]),
+                   N_years = length(unique(data[[ranef_factor_column]])),
+                   ranef_mu  = as.integer("start"    %in% ranef_components),
+                   ranef_tau = as.integer("duration" %in% ranef_components))
   #return standata object
   if(standata_only){return(standata)}
   outpars <- c('beta_mu_out', 'beta_tau_out', 'beta_tau', 'beta_sigma', 'sigma_intercept',
                'sigma_mu_ind', 'beta_star', 'finite_sd', 'mu_ind_star')
-  if ("start"    %in% raneff_components) outpars <- c(outpars, 'u_year_mean', 'u_year_mean_star', 'sd_year_mean')
-  if ("duration" %in% raneff_components) outpars <- c(outpars, 'u_year_duration', 'u_year_duration_star', 'sd_year_duration')
+  if ("start"    %in% ranef_components) outpars <- c(outpars, 'u_year_mean', 'u_year_mean_star', 'sd_year_mean')
+  if ("duration" %in% ranef_components) outpars <- c(outpars, 'u_year_duration', 'u_year_duration_star', 'sd_year_duration')
   if (log_lik)                           outpars <- c(outpars, 'log_lik')
   #guess initial values
   if(init == "auto"){
@@ -95,9 +95,9 @@ uz5_linpred_recap_annual_raneff <- function(moult_index_column, date_column, id_
            beta_sigma = as.array(c(log(sigma_start), rep(0, standata$N_pred_sigma - 1))),#NB this is on log link scale
            mu_ind = as.array(rep(0, standata$N_ind)))
     }
-    out <- rstan::sampling(stanmodels$uz5_recap_annual_raneff, data = standata, init = initfunc, pars = outpars, ...)
+    out <- rstan::sampling(stanmodels$uz5_recap_annual_ranef, data = standata, init = initfunc, pars = outpars, ...)
   } else {
-    out <- rstan::sampling(stanmodels$uz5_recap_annual_raneff, data = standata, init = init, pars = outpars, ...)
+    out <- rstan::sampling(stanmodels$uz5_recap_annual_ranef, data = standata, init = init, pars = outpars, ...)
   }
   #rename regression coefficients for output
   names(out)[grep('beta_mu_out', names(out))] <- paste('mean',colnames(X_mu), sep = '_')
@@ -110,7 +110,7 @@ uz5_linpred_recap_annual_raneff <- function(moult_index_column, date_column, id_
   out_struc$terms$moult_index_column <- moult_index_column
   out_struc$terms$moult_cat_column <- NA
   out_struc$terms$id_column <- id_column
-  out_struc$terms$year_column <- year_factor_column
+  out_struc$terms$year_column <- ranef_factor_column
   out_struc$terms$start_formula <- start_formula
   out_struc$terms$duration_formula <- duration_formula
   out_struc$terms$sigma_formula <- sigma_formula
@@ -136,7 +136,7 @@ uz5_linpred_recap_annual_raneff <- function(moult_index_column, date_column, id_
 #' @importFrom rlang .data
 #' @importFrom moultmcmc summary_table
 #' @export
-compare_plot_annual_raneff <- function(...,names = NULL){
+compare_plot_annual_ranef <- function(...,names = NULL){
   #require(ggplot2)
   parlist <- list(...)
   stopifnot(all(sapply(parlist, class) %in% c('moult','moultmcmc')))
@@ -151,11 +151,11 @@ compare_plot_annual_raneff <- function(...,names = NULL){
     ggplot(aes(x = .data$model, y = .data$estimate, col = .data$model, ymin = .data$lci, ymax = .data$uci, shape = .data$not_converged)) + geom_pointrange(position = position_dodge(0.1)) + facet_wrap(~ .data$parameter, scales = 'free') -> fixefs_plot
   dplyr::filter(plotdata, grepl("u_year", .data$parameter)) |>
     mutate(parent_parameter = stringr::str_replace(.data$parameter, '\\[[0-9]+\\]', ''),
-           raneff_level = as.numeric(stringr::str_replace_all(stringr::str_extract(.data$parameter, '\\[[0-9]+\\]'), '\\[|\\]', ''))) -> raneff_data
+           ranef_level = as.numeric(stringr::str_replace_all(stringr::str_extract(.data$parameter, '\\[[0-9]+\\]'), '\\[|\\]', ''))) -> ranef_data
   #construct dummy rows for models without random effects so the colour scale is uniform across sections
-  dummy_tibble = tidyr::expand_grid(model = names, parent_parameter = unique(raneff_data$parent_parameter))
-bind_rows(raneff_data, dummy_tibble) |>
-    ggplot(aes(x = .data$raneff_level, y = .data$estimate, col = .data$model, ymin = .data$lci, ymax = .data$uci, shape = .data$not_converged)) + geom_pointrange(position = position_dodge(0.1)) + facet_wrap(~ .data$parent_parameter, scales = 'free') +
+  dummy_tibble = tidyr::expand_grid(model = names, parent_parameter = unique(ranef_data$parent_parameter))
+bind_rows(ranef_data, dummy_tibble) |>
+    ggplot(aes(x = .data$ranef_level, y = .data$estimate, col = .data$model, ymin = .data$lci, ymax = .data$uci, shape = .data$not_converged)) + geom_pointrange(position = position_dodge(0.1)) + facet_wrap(~ .data$parent_parameter, scales = 'free') +
     scale_colour_discrete(drop = FALSE) -> ranefs_plot
   return(cowplot::plot_grid(fixefs_plot,
                             ranefs_plot,
