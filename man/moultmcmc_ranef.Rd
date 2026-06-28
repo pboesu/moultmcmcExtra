@@ -11,7 +11,7 @@ moultmcmc_ranef(
   start_formula = ~1,
   duration_formula = ~1,
   sigma_formula = ~1,
-  year_factor_column,
+  ranef_factor_column,
   type = 5,
   lump_non_moult = FALSE,
   data,
@@ -22,7 +22,7 @@ moultmcmc_ranef(
   use_phi_approx = FALSE,
   active_moult_recaps_only = TRUE,
   same_sigma = FALSE,
-  raneff_components = c("start", "duration"),
+  ranef_components = c("start", "duration"),
   standata_only = FALSE,
   all_pars = FALSE,
   ...
@@ -41,7 +41,7 @@ moultmcmc_ranef(
 
 \item{sigma_formula}{model formula for start date sigma}
 
-\item{year_factor_column}{the name of a factor column in data that contains year_factor values}
+\item{ranef_factor_column}{the name of a factor column in data that contains factor values representing the levels of a random effect}
 
 \item{type}{integer (one of 1,2,3,4,5,12) referring to type of moult data and consequently model to be fitted (see details)}
 
@@ -63,7 +63,7 @@ moultmcmc_ranef(
 
 \item{same_sigma}{logical flag, currently unused}
 
-\item{raneff_components}{character vector specifying which linear predictors receive annual random intercepts. Any combination of \code{"start"} (start date) and \code{"duration"}. Defaults to \code{c("start", "duration")} (both).}
+\item{ranef_components}{character vector specifying which linear predictors receive annual random intercepts. Any combination of \code{"start"} (start date) and \code{"duration"}. Defaults to \code{c("start", "duration")} (both).}
 
 \item{standata_only}{logical; if TRUE, return the Stan data list (standata) without fitting the model.}
 
