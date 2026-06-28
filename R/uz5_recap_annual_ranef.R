@@ -7,7 +7,7 @@
 #' @param start_formula model formula for start date
 #' @param duration_formula model formula for duration
 #' @param sigma_formula model formula for start date sigma
-#' @param ranef_factor_column the name of a factor column in data that contains year_factor values
+#' @param ranef_factor_column the name of a factor column in data that contains factor values representing the levels of a random effect
 #' @param beta_sd use zero-centred normal priors for regression coefficients other than intercepts? If <= 0 the stan default of improper flat priors is used.
 #' @param data Input data frame
 #' @param init Specification of initial values for all or some parameters. Can be the string "auto" for an automatic guess based on the data, or any of the permitted rstan options: the digit 0, the strings "0" or "random", or a function. See the detailed documentation for the init argument in ?rstan::stan.

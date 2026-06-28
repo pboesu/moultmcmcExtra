@@ -34,7 +34,7 @@ uz5_linpred_recap_annual_ranef(
 
 \item{sigma_formula}{model formula for start date sigma}
 
-\item{ranef_factor_column}{the name of a factor column in data that contains year_factor values}
+\item{ranef_factor_column}{the name of a factor column in data that contains factor values representing the levels of a random effect}
 
 \item{ranef_components}{character vector specifying which linear predictors receive
 annual random intercepts. Any combination of \code{"start"} (start date) and \code{"duration"}.

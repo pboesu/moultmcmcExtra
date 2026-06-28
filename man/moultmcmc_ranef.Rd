@@ -41,7 +41,7 @@ moultmcmc_ranef(
 
 \item{sigma_formula}{model formula for start date sigma}
 
-\item{ranef_factor_column}{the name of a factor column in data that contains year_factor values}
+\item{ranef_factor_column}{the name of a factor column in data that contains factor values representing the levels of a random effect}
 
 \item{type}{integer (one of 1,2,3,4,5,12) referring to type of moult data and consequently model to be fitted (see details)}
 
