@@ -1,5 +1,5 @@
-#install from r-universe
-install.packages("moultmcmcExtra", repos = "https://pboesu.r-universe.dev")
+# install from r-universe (run manually)
+# install.packages("moultmcmcExtra", repos = "https://pboesu.r-universe.dev")
 
 library(moult)
 library(moultmcmc)
